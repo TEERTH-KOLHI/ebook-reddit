@@ -5,8 +5,8 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Blue gradient similar to reference: #4f46e5 to #3b82f6 */
-    background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 50%, #4338ca 100%);
+    /* Vibrant gradient matching book cover */
+    background: linear-gradient(90deg, #FF4500 0%, #6c5ce7 50%, #00C2CB 100%);
     padding: 5px 0;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -59,7 +59,7 @@
 .sticky-cta-btn {
     background-color: var(--color-cta-yellow);
     color: var(--color-cta-text);
-    padding: 16px 32px;
+    padding: 12px 32px;
     border-radius: 6px;
     text-decoration: none;
     display: flex;

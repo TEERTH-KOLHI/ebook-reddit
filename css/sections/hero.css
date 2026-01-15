@@ -215,7 +215,7 @@
 .cta-button {
     background-color: var(--color-cta-yellow);
     color: var(--color-cta-text);
-    padding: 16px 32px;
+    padding: 12px 32px;
     border-radius: 6px;
     width: 100%;
     max-width: 400px;
