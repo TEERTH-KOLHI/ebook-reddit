@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Reddit to Riches</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Intl Tel Input CSS (v24.6.0) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        :root {
+            --checkout-green: #2ecc71;
+            --checkout-dark: #333;
+            --checkout-border: #ddd;
+            --checkout-bg: #f9f9f9;
+        }
+
+        body {
+            background: #4ade80;
+            /* Fallback */
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            /* Simple geometric simulation */
+            background-image:
+                linear-gradient(30deg, #4ade80 12%, transparent 12.5%, transparent 87%, #4ade80 87.5%, #4ade80),
+                linear-gradient(150deg, #4ade80 12%, transparent 12.5%, transparent 87%, #4ade80 87.5%, #4ade80),
+                linear-gradient(30deg, #4ade80 12%, transparent 12.5%, transparent 87%, #4ade80 87.5%, #4ade80),
+                linear-gradient(150deg, #4ade80 12%, transparent 12.5%, transparent 87%, #4ade80 87.5%, #4ade80),
+                linear-gradient(60deg, #2ecc7177 25%, transparent 25.5%, transparent 75%, #2ecc7177 75%, #2ecc7177),
+                linear-gradient(60deg, #2ecc7177 25%, transparent 25.5%, transparent 75%, #2ecc7177 75%, #2ecc7177);
+            background-size: 80px 140px;
+            background-color: #86efac;
+
+            color: var(--checkout-dark);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            /* Changed to column to stack header and content */
+            align-items: center;
+            justify-content: flex-start;
+            /* Align top, margin will handle centering of card */
+            min-height: 100vh;
+            margin: 0;
+            padding: 100px 20px 40px;
+            /* Added top padding for header space */
+            position: relative;
+        }
+
+        .checkout-wrapper {
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 1000px;
+            /* Wide layout */
+            display: flex;
+            flex-direction: column;
+            /* overflow: hidden; Removed to allow dropdown to show */
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .checkout-wrapper {
+                flex-direction: row;
+            }
+        }
+
+        /* --- Left Column: Payment --- */
+        .col-left {
+            flex: 1;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dashed Box */
+        .payment-dashed-box {
+            border: 2px dashed #555;
+            padding: 30px 30px 20px 30px;
+            position: relative;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        /* Floating Image Removed */
+
+        .payment-title {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .payment-underline {
+            width: 50px;
+            height: 3px;
+            background-color: var(--checkout-green);
+            margin: 0 auto 30px auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            color: #333;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: var(--checkout-green);
+        }
+
+        .form-input::placeholder {
+            color: #aaa;
+        }
+
+        .phone-input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            /* overflow: hidden; Removed */
+        }
+
+
+
+        .phone-input-group .form-input {
+            border: none;
+            border-radius: 0;
+            padding-left: 50px;
+            /* Space for flag */
+        }
+
+        /* Override plugin styles for matching design */
+        .iti {
+            width: 100%;
+        }
+
+        .iti__flag-container {
+            border-right: 1px solid #eee;
+        }
+
+        /* Fix search input border to match form design */
+        .iti__search-input {
+            border: none !important;
+            border-bottom: 1px solid #eee !important;
+            /* Keep bottom separator if needed, or fully remove if user wants NO border at all. Assuming 'remove the border' means the box border. */
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 6px 10px !important;
+            /* Reduced vertical padding */
+            font-size: 0.9rem !important;
+        }
+
+        .iti__search-input:focus {
+            border-color: var(--checkout-green) !important;
+            outline: none !important;
+        }
+
+        .checkout-btn {
+            background-color: #2eb85c;
+            /* darker green for gradient effect if needed, or flat */
+            background: linear-gradient(to bottom, #32d665, #27ae60);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .checkout-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        .secure-note {
+            font-size: 0.75rem;
+            color: #aaa;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        .secure-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            gap: 12px;
+        }
+
+        .secure-icon {
+            color: var(--checkout-green);
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .secure-text h4 {
+            margin: 0 0 5px 0;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: #000;
+        }
+
+        .secure-text p {
+            margin: 0;
+            font-size: 0.7rem;
+            line-height: 1.3;
+            color: #555;
+        }
+
+        /* --- Right Column: Offer --- */
+        .col-right {
+            flex: 1;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .col-right {
+                padding-left: 10px;
+                /* Slight separation */
+            }
+        }
+
+        .offer-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: #000;
+            text-align: center;
+        }
+
+        .offer-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #222;
+            line-height: 1.4;
+        }
+
+        .check-icon {
+            color: var(--checkout-green);
+            /* solid green circle with check */
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--checkout-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .check-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: white;
+            stroke-width: 3;
+        }
+
+        .offer-item strong {
+            font-weight: 700;
+        }
+
+        .value-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .price-stack {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .total-value {
+            color: #d32f2f;
+            font-size: 1.8rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .total-value-strike {
+            text-decoration: line-through;
+        }
+
+        .get-it-today {
+            font-size: 1.2rem;
+            font-family: 'Merriweather', serif;
+            /* Or similar serif from design */
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .final-price {
+            color: var(--checkout-green);
+            font-size: 4rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .bottom-bundle-img {
+            display: block;
+            margin: 30px auto 0 auto;
+            max-width: 100%;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Logo Area (Added) -->
+    <header class="site-header"
+        style="position: absolute; top: 0; left: 0; width: 100%; padding: 10px 0; z-index: 10; background-color: #111;">
+        <div class="header-container"
+            style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: center;">
+            <div class="logo-container"
+                style="display: inline-flex; align-items: center; border: 1px solid rgba(46, 204, 113, 0.5); padding: 8px 12px; background: rgba(0, 0, 0, 0.2);">
+                <span class="logo-icon"
+                    style="font-size: 24px; color: #fff; margin-right: 10px; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #2ecc71;">Σ</span>
+                <div class="logo-text" style="display: flex; flex-direction: column; line-height: 1;">
+                    <span class="logo-name"
+                        style="font-family: 'Inter', sans-serif; font-size: 14px; letter-spacing: 1px; color: #2ecc71; font-weight: 600;">REDDIT
+                        TO</span>
+                    <span class="logo-suffix"
+                        style="font-family: 'Inter', sans-serif; font-size: 14px; letter-spacing: 2px; color: #fff; font-weight: 400;">RICHES</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="checkout-wrapper">
+        <!-- Left Column -->
+        <div class="col-left">
+            <div class="payment-dashed-box">
+
+
+                <h2 class="payment-title">ADD YOUR PAYMENT DETAILS</h2>
+                <div class="payment-underline"></div>
+
+                <form action="#" method="POST" id="checkout-form">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="First name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Last name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="phone-input-group">
+                            <!-- intl-tel-input will handle the flag -->
+                            <input type="tel" class="form-input" id="phone" placeholder="Phone number" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="checkout-btn">Complete The Payment</button>
+                    <div class="secure-note">* 100% Secure Payment *</div>
+                </form>
+
+                <div class="secure-box">
+                    <div class="secure-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 2C9.243 2 7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7c0-2.757-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3v3H9V7c0-1.654 1.346-3 3-3zm0 10c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z" />
+                        </svg>
+                    </div>
+                    <div class="secure-text">
+                        <h4>Secure Processing</h4>
+                        <p>Each order is processed through a secure, 256-bit encrypted payment processing gateway to
+                            ensure your privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-right">
+            <h2 class="offer-title">Here's What We Are Offering:</h2>
+
+            <ul class="offer-list">
+                <li class="offer-item">
+                    <div class="check-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <span><strong>Reddit to Riches</strong> – Complete PDF Playbook</span>
+                </li>
+                <li class="offer-item">
+                    <div class="check-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <span>Clear frameworks & real examples</span>
+                </li>
+                <li class="offer-item">
+                    <div class="check-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <span>Actionable steps you can apply the same day</span>
+                </li>
+                <li class="offer-item">
+                    <div class="check-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <span>A system you can reuse again and again</span>
+                </li>
+                <li class="offer-item">
+                    <div class="check-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <span><strong>Bonus:</strong> Private Telegram Channel Access</span>
+                </li>
+            </ul>
+
+            <div class="price-stack">
+                <div class="total-value">Regular Price: <span class="total-value-strike">₹1,199</span></div>
+                <div class="get-it-today">Get it Today for Only:</div>
+                <div class="final-price">₹299</div>
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Intl Tel Input JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const input = document.querySelector("#phone");
+
+            // Initialize intl-tel-input
+            const iti = window.intlTelInput(input, {
+                initialCountry: "auto",
+                geoIpLookup: function (callback) {
+                    fetch("https://ipapi.co/json/")
+                        .then(function (res) { return res.json(); })
+                        .then(function (data) { callback(data.country_code); })
+                        .catch(function () { callback("us"); });
+                },
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js",
+                separateDialCode: true,
+                preferredCountries: ['us', 'gb', 'in', 'pk'],
+                allowDropdown: true,
+                excludeCountries: []
+            });
+
+            // Adjust input padding based on selected flag width (handled by library usually, but good to check)
+
+            // Form validation/submit handler
+            const form = document.querySelector('#checkout-form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (form.checkValidity()) {
+                    // Check if phone is valid
+                    if (iti.isValidNumber()) {
+                        const fullNumber = iti.getNumber();
+                        alert('Proceeding to payment with number: ' + fullNumber);
+                        // Here you would submit the fullNumber to your backend
+                    } else {
+                        alert('Please enter a valid phone number.');
+                    }
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

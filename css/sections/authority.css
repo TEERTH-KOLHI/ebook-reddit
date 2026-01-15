@@ -58,7 +58,7 @@
     top: 0;
     bottom: 0;
     width: 20px;
-    background: #ff4500;
+    background: var(--color-brand-reddit);
     transform-origin: left;
     transform: rotateY(90deg);
     writing-mode: vertical-rl;

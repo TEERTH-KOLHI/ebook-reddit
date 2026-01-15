@@ -75,7 +75,7 @@
     font-family: var(--font-heading);
     font-size: 1.4rem;
     margin-bottom: 20px;
-    color: #2ecc71;
+    color: var(--color-brand-reddit);
     border-bottom: 2px solid rgba(46, 204, 113, 0.2);
     padding-bottom: 15px;
 }
@@ -99,7 +99,7 @@
 
 .wr-icon {
     margin-right: 12px;
-    color: #2ecc71;
+    color: var(--color-brand-reddit);
     font-size: 1.2rem;
     flex-shrink: 0;
     margin-top: 2px;

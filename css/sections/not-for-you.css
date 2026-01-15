@@ -1,6 +1,6 @@
 /* --- Not For You Section (System Incompatibility) --- */
 .not-for-you-section {
-    padding: var(--section-padding) 0;
+    padding: var(--section-padding) 0 var(--spacing-md);
     margin-top: var(--spacing-md);
     color: #fff;
 
@@ -79,7 +79,7 @@
     top: 0;
     bottom: 0;
     width: 20px;
-    background: #111;
+    background: var(--color-brand-reddit);
     transform-origin: left;
     transform: rotateY(90deg);
     writing-mode: vertical-rl;

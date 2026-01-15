@@ -226,6 +226,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 14px rgba(253, 242, 88, 0.4);
     margin-bottom: var(--spacing-sm);
+    text-decoration: none;
 }
 
 .cta-button:hover {
