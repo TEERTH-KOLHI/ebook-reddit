@@ -1,6 +1,6 @@
 /* --- Why Reddit Works Section --- */
 .why-reddit-section {
-    padding: var(--spacing-2xl) 0;
+    padding: var(--section-padding) 0;
     background: #f0fff4;
     /* Light Mint */
     color: #1a1a1a;

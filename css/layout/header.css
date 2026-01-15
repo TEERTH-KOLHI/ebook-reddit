@@ -7,13 +7,19 @@
     z-index: 10;
 }
 
+.header-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .logo-container {
     display: inline-flex;
     align-items: center;
     border: 1px solid var(--color-border-green);
     padding: 8px 12px;
-    margin-left: 5%;
-    /* Approximate positioning */
     background: rgba(0, 0, 0, 0.2);
     /* Slight tint */
 }

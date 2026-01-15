@@ -1,6 +1,6 @@
 /* --- Results Section (Timeline) --- */
 .results-section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--section-padding) 0;
     margin-top: var(--spacing-3xl);
     /* Consistent spacing */
     background: #0b0f0d;

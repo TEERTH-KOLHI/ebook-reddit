@@ -1,6 +1,6 @@
 /* --- Trust Footer Section --- */
 .trust-footer {
-    padding: var(--spacing-md) 0 100px 0;
+    padding: 120px 0 220px 0;
     /* Gradient from reference image: Dark green-teal to darker green */
     background: linear-gradient(180deg, #1b4d3e 0%, #0d261f 100%);
     color: #fff;
@@ -12,7 +12,7 @@
 }
 
 .tf-container {
-    max-width: 1000px;
+    max-width: var(--container-width);
     /* Readability width */
     margin: 0 auto;
     padding: 0 var(--spacing-md);

@@ -21,6 +21,8 @@
     --spacing-2xl: 6rem;
     --spacing-3xl: 10rem;
 
+    --section-padding: 5rem;
+
     /* Container */
     --container-width: 1200px;
 }

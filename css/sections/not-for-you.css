@@ -1,6 +1,6 @@
 /* --- Not For You Section (System Incompatibility) --- */
 .not-for-you-section {
-    padding: var(--spacing-xl) 0 var(--spacing-xl) 0;
+    padding: var(--section-padding) 0;
     margin-top: var(--spacing-md);
     color: #fff;
 

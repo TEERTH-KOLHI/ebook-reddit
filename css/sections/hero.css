@@ -2,16 +2,14 @@
     background: var(--color-bg-dark);
     /* Adding a subtle gradient to match the "spotlight" effect in the image */
     background: radial-gradient(circle at 70% 30%, #0d352b 0%, var(--color-bg-dark) 60%);
-    min-height: 100vh;
-    /* Changed from block to flex/column if needed, but flex center is usually good for hero. 
-       However, for long content, alignment might need to be typically 'center' or 'start' depending on screen height.
-    */
+    min-height: auto;
+    /* Removed 100vh to prevent too much space on zoom out */
     display: flex;
     align-items: center;
-    padding-top: 120px;
-    /* Increased from 80px to prevent header overlap */
-    /* Space for fixed/absolute header */
-    padding-bottom: var(--spacing-xl);
+    padding-top: 116px;
+    padding-bottom: 0;
+    align-items: flex-start;
+    /* Ensure no vertical centering adds space */
     position: relative;
     overflow: hidden;
 }
@@ -35,7 +33,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
     /* Reduced from --spacing-xl */
-    align-items: center;
+    align-items: start;
     position: relative;
     z-index: 1;
     max-width: var(--container-width);
@@ -47,7 +45,7 @@
     .hero-section {
         height: auto;
         min-height: auto;
-        padding-top: 140px;
+        padding-top: 126px;
         /* More space for header on mobile if it wraps */
         padding-bottom: 60px;
         align-items: flex-start;
@@ -175,6 +173,7 @@
     font-size: 2.5rem;
     /* Reduced from 3.5rem to fit longer text */
     line-height: 1.2;
+    margin-top: 0;
     margin-bottom: var(--spacing-md);
     letter-spacing: 0.5px;
     text-transform: none;
@@ -238,6 +237,11 @@
     font-size: 1.25rem;
     font-weight: 800;
     text-transform: uppercase;
+}
+
+/* Scoped to hero section to avoid affecting other areas */
+.hero-content .cta-trust-badges {
+    padding-bottom: 20px;
 }
 
 .cta-trust-badges {

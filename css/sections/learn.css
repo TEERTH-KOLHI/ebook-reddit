@@ -1,7 +1,7 @@
 /* --- Learn Section (Creative Bento Design) --- */
 .learn-section {
-    padding-top: var(--spacing-2xl);
-    padding-bottom: 60px;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
     /* Extra space for hover effects */
     background: #f4fcf6;
     /* Very subtle mint bg */

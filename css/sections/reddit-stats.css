@@ -1,6 +1,6 @@
 /* --- Reddit Stats Section --- */
 .reddit-stats-section {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--section-padding) 0;
     background: #0d1210;
     /* Dark background to contrast with Why Reddit */
     color: #fff;

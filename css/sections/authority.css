@@ -1,8 +1,8 @@
 .authority-section {
     background-color: #ebfef0;
     /* Light mint green background */
-    padding-top: var(--spacing-xl);
-    padding-bottom: 80px;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
     /* Space for the divider */
     position: relative;
     /* overflow: visible; ensures divider is seen if it overlaps */
@@ -58,7 +58,7 @@
     top: 0;
     bottom: 0;
     width: 20px;
-    background: #ccc;
+    background: #ff4500;
     transform-origin: left;
     transform: rotateY(90deg);
     writing-mode: vertical-rl;
@@ -69,15 +69,23 @@
 }
 
 .book-cover {
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #ccc;
+    padding: 0;
+    border: none;
+    /* Image has its own border/style */
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background: #fff;
+    overflow: hidden;
+    /* Ensure image respects border radius if any */
+}
+
+.book-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* --- Text Content --- */
