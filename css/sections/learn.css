@@ -1,0 +1,228 @@
+/* --- Learn Section (Creative Bento Design) --- */
+.learn-section {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: 60px;
+    /* Extra space for hover effects */
+    background: #f4fcf6;
+    /* Very subtle mint bg */
+    position: relative;
+    /* overflow: hidden; Removed to prevent clipping shadows */
+}
+
+.learn-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header Centered */
+.learn-header-wrapper {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.learn-label {
+    display: inline-block;
+    background: #d4f5d9;
+    color: #0d5c2e;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 1px solid #b8e6bc;
+}
+
+.learn-headline {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+}
+
+.learn-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Bento Grid */
+.learn-list-wrapper {
+    width: 100%;
+}
+
+.learn-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 Columns */
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.learn-item {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Hover Effects */
+.learn-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(46, 204, 113, 0.15);
+    border-color: #2ecc71;
+}
+
+.learn-item:hover .learn-icon {
+    background: #2ecc71;
+    color: #fff;
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Bento Spans */
+/* Item 1: Full Width Top */
+.learn-item:nth-child(1) {
+    grid-column: span 3;
+    background: #0f3d32;
+    /* Dark Featured Card */
+    color: #fff;
+    flex-direction: row;
+    align-items: center;
+}
+
+.learn-item:nth-child(1) .learn-text {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.learn-item:nth-child(1) .learn-icon {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+/* Item 2 & 3: Half Width */
+.learn-item:nth-child(2),
+.learn-item:nth-child(3) {
+    grid-column: span 1;
+    /* Actually let's make them 1/3 each, but let's try something cooler */
+}
+
+/* Wait, we have 7 items.
+   1 (Span 3)
+   2, 3, 4 (Span 1)
+   5 (Span 2)
+   6 (Span 1)
+   7 (Span 3)
+*/
+
+.learn-item:nth-child(1) {
+    grid-column: span 2;
+}
+
+/* Major Point */
+.learn-item:nth-child(2) {
+    grid-column: span 1;
+    background: #e6ffe6;
+    border-color: #b8e6bc;
+}
+
+/* Accent Point */
+.learn-item:nth-child(3) {
+    grid-column: span 1;
+}
+
+.learn-item:nth-child(4) {
+    grid-column: span 2;
+}
+
+.learn-item:nth-child(5) {
+    grid-column: span 1;
+}
+
+.learn-item:nth-child(6) {
+    grid-column: span 1;
+}
+
+.learn-item:nth-child(7) {
+    grid-column: span 1;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Asset Point */
+.learn-item:nth-child(7) .learn-text {
+    color: #fff;
+}
+
+.learn-item:nth-child(7) .learn-text strong {
+    color: #2ecc71;
+}
+
+.learn-icon {
+    width: 45px;
+    height: 45px;
+    background: #f0f0f0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.learn-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #333;
+}
+
+.learn-text em {
+    font-style: normal;
+    background: rgba(255, 255, 0, 0.3);
+    padding: 0 4px;
+}
+
+.highlight-dm {
+    display: inline-block;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .learn-list {
+        grid-template-columns: 1fr;
+        /* Stack everything */
+    }
+
+    .learn-item:nth-child(n) {
+        grid-column: span 1;
+    }
+
+    .learn-headline {
+        font-size: 2.2rem;
+    }
+}

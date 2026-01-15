@@ -1,0 +1,255 @@
+.hero-section {
+    background: var(--color-bg-dark);
+    /* Adding a subtle gradient to match the "spotlight" effect in the image */
+    background: radial-gradient(circle at 70% 30%, #0d352b 0%, var(--color-bg-dark) 60%);
+    min-height: 100vh;
+    /* Changed from block to flex/column if needed, but flex center is usually good for hero. 
+       However, for long content, alignment might need to be typically 'center' or 'start' depending on screen height.
+    */
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+    /* Increased from 80px to prevent header overlap */
+    /* Space for fixed/absolute header */
+    padding-bottom: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background diagonal shape */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: var(--color-bg-dark-accent);
+    transform: skewY(-10deg);
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    /* Reduced from --spacing-xl */
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        height: auto;
+        min-height: auto;
+        padding-top: 140px;
+        /* More space for header on mobile if it wraps */
+        padding-bottom: 60px;
+        align-items: flex-start;
+        /* Align to top instead of center */
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        /* Stack columns */
+        gap: var(--spacing-xl);
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        /* Remove left padding in stacked mode */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-headline {
+        font-size: 1.8rem;
+        /* Significantly reduce for mobile */
+        margin-top: var(--spacing-md);
+    }
+
+    .hero-subheadline-strong {
+        font-size: 1.2rem;
+    }
+
+    /* Re-order to put video on top if desired, or keep as is. Usually image on top is good. */
+    .hero-media {
+        order: -1;
+        width: 100%;
+        max-width: 100%;
+        /* Allow full width */
+        margin-bottom: var(--spacing-lg);
+        /* Add space between video and text */
+    }
+
+    .video-placeholder {
+        aspect-ratio: 16/9;
+    }
+}
+
+/* Media / Video Side */
+.hero-media {
+    position: relative;
+}
+
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #eee;
+    background-image: url('../../assets/images/hero/placeholder.jpg');
+    /* Will need an image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Fallback background if image is missing */
+.video-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.unmute-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.caption-overlay {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.caption-text {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 18px;
+    line-height: 1.4;
+    display: inline-box;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.caption-sub-text {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 4px 8px;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+
+/* Content Side */
+.hero-content {
+    color: var(--color-text-white);
+    padding-left: var(--spacing-lg);
+}
+
+.hero-headline {
+    font-size: 2.5rem;
+    /* Reduced from 3.5rem to fit longer text */
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.5px;
+    text-transform: none;
+    /* The new headline is Mixed Case in the image */
+}
+
+.hero-subheadline-strong {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-brand-green);
+    /* Using accent color for emphasis */
+    color: #4ade80;
+    /* Brighter green for contrast on dark bg */
+    margin-bottom: var(--spacing-md);
+    text-transform: none;
+}
+
+.hero-subheadline {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    color: #e0e0e0;
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--spacing-md);
+    border-left: 3px solid var(--color-cta-yellow);
+    border-radius: 0 4px 4px 0;
+}
+
+.hero-description strong {
+    color: var(--color-cta-yellow);
+}
+
+.cta-button {
+    background-color: var(--color-cta-yellow);
+    color: var(--color-cta-text);
+    padding: 16px 32px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 14px rgba(253, 242, 88, 0.4);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(253, 242, 88, 0.6);
+}
+
+.cta-main-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.cta-trust-badges {
+    display: flex;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: #aaa;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.cta-trust-badges span {
+    display: flex;
+    align-items: center;
+}

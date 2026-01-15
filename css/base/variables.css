@@ -1,0 +1,26 @@
+:root {
+    /* Colors */
+    --color-bg-dark: #071f18;
+    --color-bg-dark-accent: #0f3d32;
+    --color-text-white: #ffffff;
+    --color-brand-green: #2ecc71;
+    /* Placeholder for logo green if needed */
+    --color-cta-yellow: #fdf258;
+    --color-cta-text: #000000;
+    --color-border-green: #1a5c40;
+
+    /* Fonts */
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    --spacing-2xl: 6rem;
+    --spacing-3xl: 10rem;
+
+    /* Container */
+    --container-width: 1200px;
+}

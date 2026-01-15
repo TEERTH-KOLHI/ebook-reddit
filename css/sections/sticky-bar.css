@@ -1,0 +1,118 @@
+/* --- Sticky Bottom Bar --- */
+.sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Blue gradient similar to reference: #4f46e5 to #3b82f6 */
+    background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 50%, #4338ca 100%);
+    padding: 5px 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+}
+
+.sticky-bar-container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+/* Left Text */
+.sticky-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Price Block */
+.sticky-price-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+    margin: 0 15px;
+}
+
+.sticky-price-old {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.sticky-price-new {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    /* Keeping it white for contrast on blue */
+}
+
+/* CTA Button */
+.sticky-cta-btn {
+    background-color: var(--color-cta-yellow);
+    color: var(--color-cta-text);
+    padding: 16px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 14px rgba(253, 242, 88, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.sticky-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(253, 242, 88, 0.6);
+}
+
+.cta-main-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+}
+
+.sticky-btn-sub {
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .sticky-bar {
+        padding: 5px 0;
+    }
+
+    .sticky-text {
+        display: none;
+        /* Hide "Special Offer Price" on mobile to save space */
+    }
+
+    .sticky-bar-container {
+        justify-content: space-between;
+    }
+
+    .sticky-price-new {
+        font-size: 1.3rem;
+    }
+
+    .sticky-cta-btn {
+        padding: 6px 16px;
+    }
+
+    .sticky-btn-text {
+        font-size: 0.9rem;
+    }
+}

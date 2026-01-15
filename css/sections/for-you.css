@@ -1,0 +1,305 @@
+/* --- For You Section (System Fit) --- */
+.for-you-section {
+    padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+    margin-bottom: 0;
+
+    color: #fff;
+    position: relative;
+    /* border moved to not-for-you */
+    overflow: hidden;
+}
+
+.for-you-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Split 50/50 */
+    gap: 80px;
+    /* Increased gap as requested */
+    align-items: center;
+}
+
+/* Constrain content width to make them look 'smaller' & more contained */
+.fy-image-wrapper,
+.fy-content {
+    max-width: 550px;
+    /* Prevent them from stretching too wide */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Left: Graphic Wrapper */
+.fy-image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #121815 0%, #0a0e0c 100%);
+    border: 1px solid rgba(46, 204, 113, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    /* Ensure height matches content roughly */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* For You Book Graphic */
+.fy-book-graphic {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* Book Styles (Dark Version - Matching Not-For-You but yellow/neutral) */
+.book-placeholder-fy {
+    width: 240px;
+    height: 340px;
+    background: #1a1a1a;
+    position: relative;
+    transform: rotateY(-15deg);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f1c40f;
+    font-family: var(--font-heading);
+    border-radius: 4px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.book-placeholder-fy:hover {
+    transform: rotateY(0deg) scale(1.02);
+}
+
+.book-spine-fy {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: #111;
+    transform-origin: left;
+    transform: rotateY(90deg);
+    writing-mode: vertical-rl;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    border-right: 1px solid #333;
+}
+
+.book-cover-fy {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #333;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #1a1a1a;
+}
+
+.book-cover-fy h3 {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.book-cover-fy span {
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+/* Yellow Check Overlay */
+.yellow-check-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    /* Relative to container */
+    max-width: 300px;
+    aspect-ratio: 1/1;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.yellow-check-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 15px rgba(241, 196, 15, 0.6));
+    animation: pulse-yellow-check 3s infinite ease-in-out;
+}
+
+@keyframes pulse-yellow-check {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+/* Right: Content (Terminal Style) */
+.fy-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.fy-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.fy-label {
+    color: #2ecc71;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fy-label::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #2ecc71;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #2ecc71;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.fy-headline {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+    color: #fff;
+}
+
+.fy-sub {
+    font-size: 1.1rem;
+    color: #888;
+    line-height: 1.6;
+    border-left: 2px solid #333;
+    padding-left: 20px;
+}
+
+/* Terminal List */
+.fy-terminal-window {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    border-radius: 8px;
+    padding: 25px;
+    font-family: 'Courier New', monospace;
+    /* Fallback to monospace */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.fy-terminal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fy-log-item {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #bbb;
+    transition: all 0.2s ease;
+}
+
+.fy-log-item:last-child {
+    margin-bottom: 0;
+}
+
+.fy-log-item:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.fy-cmd {
+    color: #2ecc71;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.fy-result {
+    color: #fff;
+    /* font-family: var(--font-body); Allow sans-serif for readability if desired, but mono fits theme */
+}
+
+.fy-status {
+    color: #2ecc71;
+    font-size: 0.8rem;
+    margin-left: auto;
+    opacity: 0.7;
+    border: 1px solid #2ecc71;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Status Line */
+.fy-status-line {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    font-weight: bold;
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .for-you-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .fy-image-wrapper {
+        order: -1;
+        /* Image on top? Or maybe below? Let's keep it top for impact */
+        margin-bottom: var(--spacing-md);
+    }
+
+    .fy-headline {
+        font-size: 2.2rem;
+    }
+}

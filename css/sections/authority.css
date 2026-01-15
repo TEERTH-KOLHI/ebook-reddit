@@ -1,0 +1,205 @@
+.authority-section {
+    background-color: #ebfef0;
+    /* Light mint green background */
+    padding-top: var(--spacing-xl);
+    padding-bottom: 80px;
+    /* Space for the divider */
+    position: relative;
+    /* overflow: visible; ensures divider is seen if it overlaps */
+}
+
+/* --- Main Grid --- */
+.authority-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    /* Reduced gap */
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 900px) {
+    .authority-main-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Book Placeholder */
+.book-mockup-container {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.book-placeholder {
+    width: 280px;
+    height: 400px;
+    background: #e0e0e0;
+    position: relative;
+    transform: rotateY(-15deg);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-family: var(--font-heading);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.book-placeholder:hover {
+    transform: rotateY(0deg) scale(1.02);
+}
+
+.book-spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: #ccc;
+    transform-origin: left;
+    transform: rotateY(90deg);
+    writing-mode: vertical-rl;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.book-cover {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+}
+
+/* --- Text Content --- */
+.authority-content-text {
+    color: #111;
+}
+
+.authority-headline {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    color: #071f18;
+    /* Dark green/black */
+    font-weight: 700;
+    text-transform: none;
+}
+
+.authority-subhead {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    font-style: italic;
+    color: #444;
+}
+
+.authority-lead {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.authority-list {
+    list-style: none;
+    margin-bottom: var(--spacing-lg);
+}
+
+.authority-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.list-icon {
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.authority-impact {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+}
+
+.highlight-green {
+    color: #00b300;
+    font-weight: 700;
+}
+
+.authority-promise {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* --- CTA --- */
+.authority-cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    /* Space before divider */
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-trust-badges.dark-text {
+    color: #444;
+    /* Darker text for light background */
+    margin-top: 8px;
+    justify-content: center;
+}
+
+/* --- Divider --- */
+/* --- Divider --- */
+.section-plus-divider {
+    position: absolute;
+    bottom: -110px;
+    /* Half height of 220px */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 220px;
+    background: #b8e6bc;
+    /* Matching inner light green */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    border: 20px solid #0f3d32;
+    /* Extra thick dark green border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.plus-icon {
+    font-size: 9rem;
+    font-weight: 700;
+    /* Extra bold */
+    color: #000;
+    line-height: 0;
+    /* Ensure clean centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-bottom: 12px;
+    /* Optical centering adjustment */
+}

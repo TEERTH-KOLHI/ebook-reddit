@@ -1,0 +1,187 @@
+/* --- Deliverables Section (What You Get) --- */
+.deliverables-section {
+    padding: var(--spacing-2xl) 0;
+    background: #0f1412;
+    /* Dark background matching other dark sections */
+    color: #fff;
+    position: relative;
+    border-top: 1px solid #1f2b26;
+    overflow: hidden;
+}
+
+.deliverables-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    text-align: center;
+}
+
+/* Header */
+.del-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.del-headline {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-sm);
+    color: #fff;
+    line-height: 1.2;
+}
+
+.del-icon-header {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Content Box */
+.del-box {
+    background: linear-gradient(145deg, #161a18, #0a0d0c);
+    border: 1px solid #2ecc71;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(46, 204, 113, 0.1);
+    position: relative;
+}
+
+/* Glowing Corner Accents */
+.del-box::before,
+.del-box::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #2ecc71;
+    transition: all 0.3s ease;
+}
+
+.del-box::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 12px 0 0 0;
+}
+
+.del-box::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 12px 0;
+}
+
+/* List */
+.del-list {
+    list-style: none;
+    text-align: left;
+    margin: 0 auto;
+    display: inline-block;
+    /* Center the list block */
+    max-width: 100%;
+}
+
+.del-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.del-item:last-child {
+    margin-bottom: 0;
+}
+
+.del-item:hover {
+    transform: translateX(10px);
+    background: rgba(46, 204, 113, 0.1);
+}
+
+.del-icon {
+    font-size: 1.8rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.del-text {
+    color: #eee;
+}
+
+/* Footer / CTA status */
+.del-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: monospace;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.del-status-dot {
+    width: 10px;
+    height: 10px;
+    background: #2ecc71;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #2ecc71;
+    animation: blink-green 2s infinite;
+}
+
+@keyframes blink-green {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .del-headline {
+        font-size: 2.2rem;
+    }
+
+    .del-box {
+        padding: 25px;
+    }
+
+    .del-item {
+        font-size: 1rem;
+        flex-direction: column;
+        /* Optional: Stack icon on top if text is long, but flex-row usually fine */
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .del-icon {
+        margin-bottom: 10px;
+    }
+}

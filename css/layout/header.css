@@ -1,0 +1,56 @@
+.site-header {
+    padding: var(--spacing-lg) 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo-container {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border-green);
+    padding: 8px 12px;
+    margin-left: 5%;
+    /* Approximate positioning */
+    background: rgba(0, 0, 0, 0.2);
+    /* Slight tint */
+}
+
+.logo-icon {
+    font-size: 24px;
+    color: var(--color-brand-green);
+    margin-right: 10px;
+    font-weight: bold;
+    /* Placeholder styling for the "Sigma" like icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #0f3d32;
+    /* Darker green square specific to logo */
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-name {
+    font-family: var(--font-body);
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--color-brand-green);
+    font-weight: 600;
+}
+
+.logo-suffix {
+    font-family: var(--font-body);
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--color-brand-green);
+    font-weight: 400;
+}

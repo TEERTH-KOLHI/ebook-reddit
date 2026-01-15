@@ -1,0 +1,144 @@
+/* --- Why Reddit Works Section --- */
+.why-reddit-section {
+    padding: var(--spacing-2xl) 0;
+    background: #f0fff4;
+    /* Light Mint */
+    color: #1a1a1a;
+    position: relative;
+    border-top: 1px solid #c6e6d0;
+}
+
+.why-reddit-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header */
+.wr-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wr-headline {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-sm);
+    color: #0f3d32;
+    line-height: 1.2;
+}
+
+.wr-sub {
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 500;
+}
+
+/* Content Grid */
+.wr-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Columns */
+.wr-col {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    border: 1px solid rgba(46, 204, 113, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.wr-col:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.wr-col-center {
+    background: #0f3d32;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+}
+
+.wr-col-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #2ecc71;
+    border-bottom: 2px solid rgba(46, 204, 113, 0.2);
+    padding-bottom: 15px;
+}
+
+.wr-list {
+    list-style: none;
+}
+
+.wr-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.wr-item:last-child {
+    margin-bottom: 0;
+}
+
+.wr-icon {
+    margin-right: 12px;
+    color: #2ecc71;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Centerpiece Styling */
+.wr-center-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.wr-center-text {
+    font-size: 2rem;
+    font-family: var(--font-heading);
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.wr-center-sub {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .wr-headline {
+        font-size: 2.2rem;
+    }
+
+    .wr-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .wr-col-center {
+        order: -1;
+        /* Show main concept first on mobile? Or stick to flow. Let's stick to flow for now, or maybe top. */
+        order: 0;
+    }
+}
