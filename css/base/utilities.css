@@ -14,3 +14,24 @@
     width: 100%;
     overflow: hidden;
 }
+
+/* Book Cover Gradient Utility */
+.text-gradient-book {
+    background: linear-gradient(90deg, #FF5722, #0FCBD1, #673AB7, #FFC107);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline;
+    animation: gradient-shift 5s ease infinite alternate;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}

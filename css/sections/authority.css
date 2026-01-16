@@ -144,8 +144,14 @@
 }
 
 .highlight-green {
-    color: #00b300;
+    background: linear-gradient(90deg, #FF5722, #0FCBD1, #673AB7, #FFC107);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     font-weight: 700;
+    animation: gradient-shift 5s ease infinite alternate;
+    display: inline-block;
 }
 
 .authority-promise {

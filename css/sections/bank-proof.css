@@ -39,7 +39,13 @@
 }
 
 .highlight-green {
-    color: var(--color-brand-green);
+    background: linear-gradient(90deg, #FF5722, #0FCBD1, #673AB7, #FFC107);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 5s ease infinite alternate;
+    display: inline-block;
 }
 
 .proof-card-grid {
@@ -178,7 +184,13 @@
 }
 
 .text-green {
-    color: #2ecc71 !important;
+    background: linear-gradient(90deg, #FF5722, #0FCBD1, #673AB7, #FFC107);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 5s ease infinite alternate;
+    display: inline-block;
 }
 
 .dh-trend-icon {
@@ -263,10 +275,7 @@
     /* Circle lens style */
 }
 
-/* Ensure images don't transform/scale in place anymore */
-.proof-card img {
-    /* transition: transform 0.2s ease-out; Disabled old zoom transition */
-}
+
 
 .proof-card:hover {
     transform: none;

@@ -183,12 +183,17 @@
 .hero-subheadline-strong {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--color-brand-green);
-    /* Using accent color for emphasis */
-    color: #4ade80;
-    /* Brighter green for contrast on dark bg */
+    /* Gradient Text */
+    background: linear-gradient(90deg, #FF5722, #0FCBD1, #673AB7, #FFC107);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 5s ease infinite alternate;
     margin-bottom: var(--spacing-md);
     text-transform: none;
+    display: inline-block;
+    padding-bottom: 2px;
 }
 
 .hero-subheadline {
@@ -238,6 +243,9 @@
     font-size: 1.25rem;
     font-weight: 800;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Scoped to hero section to avoid affecting other areas */

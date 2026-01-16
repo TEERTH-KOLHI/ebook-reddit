@@ -1,8 +1,9 @@
 /* --- Trust Footer Section --- */
 .trust-footer {
     padding: 120px 0 220px 0;
-    /* Gradient from reference image: Dark green-teal to darker green */
-    background: linear-gradient(180deg, #1b4d3e 0%, #0d261f 100%);
+    /* Matched to Hero Section */
+    background: var(--color-bg-dark);
+    background: radial-gradient(circle at 70% 30%, #0d352b 0%, var(--color-bg-dark) 60%);
     color: #fff;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
