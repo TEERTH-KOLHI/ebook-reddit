@@ -3,7 +3,8 @@
     padding: var(--section-padding) 0;
     margin-bottom: 0;
 
-    color: #fff;
+    background: #ebfef0;
+    color: #333;
     position: relative;
     /* border moved to not-for-you */
     overflow: hidden;
@@ -202,7 +203,7 @@
     font-size: 3rem;
     line-height: 1.1;
     margin-bottom: var(--spacing-md);
-    color: #fff;
+    color: #071f18;
 }
 
 .fy-sub {
@@ -215,18 +216,17 @@
 
 /* Terminal List */
 .fy-terminal-window {
-    background: rgba(0, 0, 0, 0.4);
+    background: #111;
+    /* Solid dark for code contrast */
     border: 1px solid rgba(46, 204, 113, 0.2);
     border-radius: 8px;
     padding: 25px;
     font-family: 'Courier New', monospace;
     /* Fallback to monospace */
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .fy-terminal-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 15px;
     margin-bottom: 20px;
     font-size: 0.8rem;
@@ -279,7 +279,6 @@
 .fy-status-line {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid rgba(46, 204, 113, 0.2);
     color: #2ecc71;
     font-weight: bold;
     text-align: right;

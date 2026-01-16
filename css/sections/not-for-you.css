@@ -1,12 +1,11 @@
 /* --- Not For You Section (System Incompatibility) --- */
 .not-for-you-section {
     padding: var(--section-padding) 0 var(--spacing-md);
-    margin-top: var(--spacing-md);
-    color: #fff;
+    margin-top: 0;
+    background: #ebfef0;
+    color: #333;
 
     position: relative;
-    border-top: 1px solid #1f2b26;
-    /* Restored original border */
     overflow: hidden;
 }
 
@@ -199,7 +198,7 @@
     font-size: 3rem;
     line-height: 1.1;
     margin-bottom: var(--spacing-md);
-    color: #fff;
+    color: #071f18;
 }
 
 .nfu-headline span {
@@ -210,17 +209,16 @@
 
 /* Terminal List */
 .nfu-terminal-window {
-    background: rgba(20, 0, 0, 0.4);
+    background: #1a0505;
+    /* Solid dark red-black */
     border: 1px solid rgba(231, 76, 60, 0.2);
     border-radius: 8px;
     padding: 25px;
     font-family: 'Courier New', monospace;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .nfu-terminal-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 15px;
     margin-bottom: 20px;
     font-size: 0.8rem;
@@ -271,7 +269,6 @@
 .nfu-status-line {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid rgba(231, 76, 60, 0.2);
     color: #e74c3c;
     font-weight: bold;
     text-align: right;

@@ -18,7 +18,7 @@
 .logo-container {
     display: inline-flex;
     align-items: center;
-    border: 1px solid var(--color-border-green);
+    border: 1px solid #FF4500;
     padding: 8px 12px;
     background: rgba(0, 0, 0, 0.2);
     /* Slight tint */

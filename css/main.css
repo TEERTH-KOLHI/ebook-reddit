@@ -5,7 +5,12 @@
 
 @import 'layout/header.css';
 /* @import 'layout/footer.css'; */
-/* @import 'layout/grid.css'; */
+@import 'layout/grid.css';
+
+*/ body {
+    background-color: #ebfef0;
+    color: #333;
+}
 
 @import 'sections/hero.css';
 @import 'sections/authority.css';

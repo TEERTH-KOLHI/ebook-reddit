@@ -1,12 +1,10 @@
 /* --- Final CTA Section --- */
 .final-cta-section {
     padding: var(--spacing-2xl) 0 var(--spacing-3xl) 0;
-    background: #071f18;
-    /* Dark, same as Hero or slightly different? Using base dark var */
-    /* background: radial-gradient(circle at 50% 50%, #0d352b 0%, #071f18 70%); Optional spotlight */
-    color: #fff;
+    background: #ebfef0;
+    /* Light background */
+    color: #333;
     position: relative;
-    border-top: 1px solid #1f2b26;
     text-align: center;
 }
 
@@ -21,13 +19,13 @@
     font-family: var(--font-heading);
     margin-bottom: var(--spacing-lg);
     line-height: 1.2;
-    color: #fff;
+    color: #071f18;
 }
 
 .final-cta-sub {
     font-size: 1.2rem;
-    color: #f1c40f;
-    /* Yellow for "Click below" */
+    color: #d35400;
+    /* Dark Orange for visibility */
     margin-bottom: var(--spacing-md);
     display: block;
     animation: bounce-small 2s infinite;

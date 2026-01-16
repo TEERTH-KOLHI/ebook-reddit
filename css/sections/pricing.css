@@ -1,10 +1,9 @@
 /* --- Pricing Section (Simple Investment) --- */
 .pricing-section {
     padding: var(--section-padding) 0;
-    background: #0f1412;
-    color: #fff;
+    background: #ebfef0;
+    color: #333;
     position: relative;
-    border-top: 1px solid #1f2b26;
     overflow: hidden;
 }
 
@@ -24,7 +23,7 @@
     font-size: 3rem;
     font-family: var(--font-heading);
     margin-bottom: 10px;
-    color: #fff;
+    color: #071f18;
     line-height: 1.2;
 }
 
@@ -33,16 +32,17 @@
     margin-bottom: var(--spacing-sm);
     /* Reduced margin for connector */
     padding: 20px;
-    background: rgba(255, 255, 255, 0.02);
+    background: #fff;
     border-radius: 8px;
-    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     display: inline-block;
     text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .pricing-connector {
     margin: 10px 0;
-    color: #666;
+    color: #555;
     animation: bounce 2s infinite;
 }
 
@@ -67,7 +67,7 @@
 
 .compare-title {
     font-size: 1.1rem;
-    color: #888;
+    color: #333;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -83,7 +83,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    color: #aaa;
+    color: #555;
     font-size: 1rem;
 }
 
@@ -154,7 +154,6 @@
     /* Green for ROI/Money earned */
     font-style: italic;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .pricing-roi-icon {
@@ -210,7 +209,6 @@
     font-size: 0.9rem;
     color: #ccc;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .pricing-trust-item {

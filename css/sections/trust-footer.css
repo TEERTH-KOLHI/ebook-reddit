@@ -2,9 +2,8 @@
 .trust-footer {
     padding: 120px 0 220px 0;
     /* Matched to Hero Section */
-    background: var(--color-bg-dark);
-    background: radial-gradient(circle at 70% 30%, #0d352b 0%, var(--color-bg-dark) 60%);
-    color: #fff;
+    background: #ebfef0;
+    color: #333;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     /* Subtle separator */
@@ -38,14 +37,14 @@
 /* Disclaimers */
 .tf-disclaimer-fb {
     margin-bottom: var(--spacing-md);
-    color: #cbd5e1;
-    /* Light slate text */
+    color: #64748b;
+    /* Darker slate text */
     font-size: 0.85rem;
 }
 
 .tf-disclaimer-main {
     margin-bottom: var(--spacing-xl);
-    color: #94a3b8;
+    color: #475569;
     /* Muted text */
     font-size: 0.8rem;
     text-align: justify;
@@ -65,7 +64,7 @@
 }
 
 .tf-link-item {
-    color: #fff;
+    color: #333;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;

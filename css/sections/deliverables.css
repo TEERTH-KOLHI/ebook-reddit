@@ -1,11 +1,10 @@
 /* --- Deliverables Section (What You Get) --- */
 .deliverables-section {
     padding: var(--section-padding) 0;
-    background: #0f1412;
-    /* Dark background matching other dark sections */
-    color: #fff;
+    background: #ebfef0;
+    /* Light background */
+    color: #333;
     position: relative;
-    border-top: 1px solid #1f2b26;
     overflow: hidden;
 }
 
@@ -25,7 +24,7 @@
     font-size: 3rem;
     font-family: var(--font-heading);
     margin-bottom: var(--spacing-sm);
-    color: #fff;
+    color: #071f18;
     line-height: 1.2;
 }
 

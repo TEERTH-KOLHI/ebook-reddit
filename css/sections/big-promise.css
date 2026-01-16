@@ -1,11 +1,10 @@
 /* --- Big Promise Section --- */
 .big-promise-section {
-    background-color: #0f3d32;
-    /* Dark green matching previous divider border */
+    background-color: #ebfef0;
     padding-top: 150px;
     /* Space for the overlapping divider from previous section */
     padding-bottom: var(--section-padding);
-    color: #fff;
+    color: #333;
     position: relative;
     z-index: 1;
     /* Below the divider z-index */
@@ -95,12 +94,13 @@
 .community-section {
     margin-top: 80px;
     margin-bottom: 80px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     padding: 60px 40px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* Glass effect background/glow */
@@ -111,7 +111,7 @@
     right: 0;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(46, 204, 113, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle, rgba(46, 204, 113, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
     pointer-events: none;
 }
 
@@ -130,8 +130,8 @@
     display: inline-block;
     font-size: 0.8rem;
     font-weight: 700;
-    background: rgba(46, 204, 113, 0.1);
-    color: #2ecc71;
+    background: rgba(46, 204, 113, 0.15);
+    color: #0d5c2e;
     padding: 6px 12px;
     border-radius: 20px;
     margin-bottom: 16px;
@@ -141,20 +141,20 @@
 .community-heading {
     font-size: 2.2rem;
     font-family: var(--font-heading);
-    color: #fff;
+    color: #071f18;
     margin-bottom: 10px;
     line-height: 1.2;
 }
 
 .community-subhead {
     font-size: 1.2rem;
-    color: #eee;
+    color: #333;
     margin-bottom: 16px;
     font-weight: 600;
 }
 
 .community-desc {
-    color: #aaa;
+    color: #555;
     margin-bottom: 30px;
     line-height: 1.6;
 }
@@ -183,13 +183,13 @@
 }
 
 .community-features li strong {
-    color: #fff;
+    color: #000;
     font-size: 1rem;
     margin-bottom: 4px;
 }
 
 .community-features li span {
-    color: #888;
+    color: #555;
     font-size: 0.9rem;
 }
 
@@ -282,7 +282,7 @@
 .cta-pitch {
     font-size: 1.5rem;
     margin-bottom: var(--spacing-lg);
-    color: #fff;
+    color: #000;
 }
 
 
