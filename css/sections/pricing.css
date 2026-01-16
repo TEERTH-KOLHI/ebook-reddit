@@ -180,18 +180,19 @@
 .pricing-cta-btn {
     background-color: var(--color-cta-yellow);
     color: var(--color-cta-text);
-    padding: 20px 30px;
-    border-radius: 4px;
+    padding: 24px 40px;
+    border-radius: 6px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 14px rgba(253, 242, 88, 0.4);
+    box-shadow: 0 6px 16px rgba(253, 242, 88, 0.4);
     text-decoration: none;
     cursor: pointer;
     border: none;
+    line-height: 1.1;
 }
 
 .pricing-cta-btn:hover {
@@ -200,13 +201,23 @@
 }
 
 .pricing-btn-text {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 800;
     text-transform: uppercase;
     font-family: var(--font-body);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cta-sub-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-top: 5px;
+    color: #c0392b;
+    /* Deep Red */
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    animation: textGlow 1.5s ease-in-out infinite alternate;
 }
 
 /* Trust Badges in Pricing */

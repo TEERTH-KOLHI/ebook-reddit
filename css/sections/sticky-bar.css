@@ -7,7 +7,7 @@
     width: 100%;
     max-width: var(--container-width);
     /* Align with content box */
-    height: 70px;
+    height: 95px;
     z-index: 1000;
     /* Vibrant gradient matching book cover */
     background: linear-gradient(90deg, #FF4500 0%, #6c5ce7 50%, #00C2CB 100%);
@@ -68,17 +68,17 @@
 .sticky-cta-btn {
     background-color: var(--color-cta-yellow);
     color: var(--color-cta-text);
-    padding: 8px 24px;
-    /* Compact padding */
-    border-radius: 4px;
+    padding: 10px 30px;
+    border-radius: 6px;
     text-decoration: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 14px rgba(253, 242, 88, 0.4);
     border: none;
     cursor: pointer;
+    line-height: 1;
 }
 
 .sticky-cta-btn:hover {
@@ -87,14 +87,24 @@
 }
 
 .cta-main-text {
-    font-size: 0.95rem;
-    /* Smaller text */
+    font-size: 1.1rem;
     font-weight: 800;
     text-transform: uppercase;
     font-family: var(--font-body);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cta-sub-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 2px;
+    white-space: nowrap;
+    color: #c0392b;
+    /* Deep Red */
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    animation: textGlow 1.5s ease-in-out infinite alternate;
 }
 
 .sticky-btn-sub {
@@ -104,33 +114,66 @@
 /* Mobile */
 @media (max-width: 900px) {
     .sticky-bar {
-        padding: 5px 0;
+        padding: 10px 0;
         height: auto;
-        /* Allow auto height if things wrap */
+        min-height: 95px;
     }
 
     .sticky-text {
         display: none;
-        /* Hide "Special Offer Price" on mobile to save space */
     }
 
     .sticky-bar-container {
-        justify-content: space-between;
-        /* Space around implies centering if taken literally but mostly just layout */
-        /* If we want centered: */
         justify-content: center;
         gap: 20px;
+        flex-direction: row;
+        /* Keep row generally, but items might need tweaks */
+    }
+
+    .sticky-price-block {
+        flex-direction: column;
+        /* Stack prices */
+        align-items: center;
+        margin: 0;
+        gap: 2px;
+    }
+
+    .sticky-price-old {
+        font-size: 0.9rem;
     }
 
     .sticky-price-new {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+
+    .sticky-cta-wrapper {
+        align-items: center;
+        /* Ensure wrapper centers its content */
     }
 
     .sticky-cta-btn {
-        padding: 8px 16px;
+        padding: 12px 20px;
     }
 
-    .cta-main-text {
-        font-size: 0.9rem;
+    .cta-trust-badges {
+        display: flex !important;
+        /* Force show */
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        font-size: 0.65rem !important;
+        margin-top: 5px;
+        width: 100%;
+        color: rgba(255, 255, 255, 0.9);
+        gap: 8px;
+        /* Add some spacing between badges if they wrap */
+    }
+
+    .cta-trust-badges span {
+        display: flex;
+        align-items: center;
+        margin: 0 !important;
+        /* Remove inline margins if any */
     }
 }

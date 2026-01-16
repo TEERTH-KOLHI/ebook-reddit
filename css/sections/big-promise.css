@@ -286,11 +286,19 @@
 }
 
 
+.mobile-break {
+    display: none;
+}
+
 /* Mobile Responsive */
 @media (max-width: 900px) {
     .promise-grid {
         grid-template-columns: 1fr;
         justify-items: center;
+    }
+
+    .mobile-break {
+        display: inline;
     }
 
     .workshop-video-container {

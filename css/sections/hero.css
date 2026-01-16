@@ -158,32 +158,53 @@
 .cta-button {
     background-color: var(--color-cta-yellow);
     color: var(--color-cta-text);
-    padding: 12px 32px;
-    border-radius: 4px;
+    padding: 16px 40px;
+    border-radius: 6px;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 14px rgba(253, 242, 88, 0.4);
+    box-shadow: 0 6px 16px rgba(253, 242, 88, 0.4);
     margin-bottom: var(--spacing-sm);
     text-decoration: none;
+    line-height: 1.1;
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(253, 242, 88, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(253, 242, 88, 0.6);
 }
 
 .cta-main-text {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: 800;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cta-sub-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 4px;
+    color: #c0392b;
+    /* Deep Red */
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 2px rgba(192, 57, 43, 0.2);
+    }
+
+    to {
+        text-shadow: 0 0 8px rgba(192, 57, 43, 0.6);
+    }
 }
 
 /* Scoped to hero section to avoid affecting other areas */
