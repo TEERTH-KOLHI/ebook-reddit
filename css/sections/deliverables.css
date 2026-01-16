@@ -51,13 +51,13 @@
 
 /* Content Box */
 .del-box {
-    background: linear-gradient(145deg, #161a18, #0a0d0c);
+    background: #fff;
     border: 1px solid #2ecc71;
     border-radius: 16px;
     padding: 40px;
     max-width: 800px;
     margin: 0 auto;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(46, 204, 113, 0.1);
+    box-shadow: 0 20px 50px rgba(46, 204, 113, 0.1), inset 0 0 0 1px rgba(46, 204, 113, 0.1);
     position: relative;
 }
 
@@ -104,7 +104,7 @@
     margin-bottom: 25px;
     font-size: 1.2rem;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(0, 0, 0, 0.03);
     border-radius: 8px;
     transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -123,7 +123,7 @@
     height: 32px;
     margin-right: 20px;
     flex-shrink: 0;
-    color: #fff;
+    color: #2ecc71;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,16 +136,16 @@
 }
 
 .del-text {
-    color: #eee;
+    color: #333;
 }
 
 /* Footer / CTA status */
 .del-footer {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-family: monospace;
-    color: #888;
+    color: #555;
     display: flex;
     align-items: center;
     justify-content: center;

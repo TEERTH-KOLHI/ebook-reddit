@@ -35,3 +35,24 @@
         background-position: 100% 50%;
     }
 }
+
+/* Trust Badges Global Override */
+.cta-trust-badges svg {
+    stroke: #FF4500 !important;
+    /* Reddit Official Color */
+}
+
+.cta-trust-badges span {
+    color: #FF4500 !important;
+    /* Reddit Official Color */
+    font-weight: 500;
+}
+
+/* Exception for Sticky Bar (keep white) */
+.sticky-bar .cta-trust-badges svg {
+    stroke: #fff !important;
+}
+
+.sticky-bar .cta-trust-badges span {
+    color: #fff !important;
+}

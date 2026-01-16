@@ -113,7 +113,7 @@
 
 /* Right: Dependencies (Terminal Box) */
 .dependencies-wrapper {
-    background: #000;
+    background: #ebfef0;
     border: 1px solid #333;
     border-radius: 8px;
     padding: 30px;
@@ -132,7 +132,7 @@
 .dep-title {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: #fff;
+    color: #1a1a1a;
     margin-bottom: 20px;
 }
 
@@ -145,8 +145,8 @@
     align-items: center;
     margin-bottom: 15px;
     font-size: 1.1rem;
-    color: #ccc;
-    background: rgba(255, 255, 255, 0.05);
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
     padding: 10px 15px;
     border-radius: 4px;
 }

@@ -96,15 +96,18 @@
 
 /* Pricing Card */
 .pricing-card {
-    background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
-    border: 1px solid #f1c40f;
-    /* Gold border */
+    background: #fff;
+    /* Light Card */
+    border: 2px solid #f1c40f;
     border-radius: 12px;
     padding: 40px;
     position: relative;
-    box-shadow: 0 0 30px rgba(241, 196, 15, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    /* Brighter shadow */
     transform: scale(1);
     transition: transform 0.3s ease;
+    /* overflow: hidden; Removed to let badge show */
+    text-align: center;
 }
 
 .pricing-card:hover {
@@ -126,12 +129,17 @@
     font-size: 0.9rem;
     text-transform: uppercase;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff;
+    /* Add white border to separate from card border */
+    z-index: 10;
+    width: max-content;
 }
 
 .pricing-intro {
     font-size: 1.2rem;
-    color: #ddd;
+    color: #555;
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .pricing-amount {
@@ -207,19 +215,19 @@
     gap: 20px;
     flex-wrap: wrap;
     font-size: 0.9rem;
-    color: #ccc;
     padding-top: 20px;
 }
 
 .pricing-trust-item {
     display: flex;
     align-items: center;
+    color: #FF4500;
+    /* Reddit Official Color */
+    font-weight: 500;
 }
 
-.pricing-trust-icon {
-    margin-right: 6px;
-    color: #2ecc71;
-    font-weight: bold;
+.pricing-trust-item svg {
+    stroke: #FF4500 !important;
 }
 
 /* Mobile */

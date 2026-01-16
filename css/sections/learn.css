@@ -86,7 +86,7 @@
 }
 
 .learn-item:hover .learn-icon {
-    background: #000;
+    background: #FF4500;
     color: #fff;
     transform: scale(1.1) rotate(5deg);
 }
@@ -95,21 +95,21 @@
 /* Item 1: Full Width Top */
 .learn-item:nth-child(1) {
     grid-column: span 3;
-    background: #0f3d32;
+    background: #ebfef0;
     /* Dark Featured Card */
-    color: #fff;
+    color: #1a1a1a;
     flex-direction: row;
     align-items: center;
 }
 
 .learn-item:nth-child(1) .learn-text {
-    color: #fff;
+    color: #1a1a1a;
     font-size: 1.5rem;
 }
 
 .learn-item:nth-child(1) .learn-icon {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    background: rgba(0, 0, 0, 0.05);
+    color: #d35400;
     width: 60px;
     height: 60px;
 }
@@ -164,17 +164,17 @@
 
 .learn-item:nth-child(7) {
     grid-column: span 1;
-    background: #1a1a1a;
-    color: #fff;
+    background: #ebfef0;
+    color: #1a1a1a;
 }
 
 /* Asset Point */
 .learn-item:nth-child(7) .learn-text {
-    color: #fff;
+    color: #1a1a1a;
 }
 
 .learn-item:nth-child(7) .learn-text strong {
-    color: #2ecc71;
+    color: #d35400;
 }
 
 .learn-icon {

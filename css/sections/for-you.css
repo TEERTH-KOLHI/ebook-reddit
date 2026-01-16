@@ -36,14 +36,14 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    background: linear-gradient(135deg, #121815 0%, #0a0e0c 100%);
-    border: 1px solid rgba(46, 204, 113, 0.1);
+    background: linear-gradient(135deg, #ebfef0 0%, #E6F6EB 100%);
+    border: 1px solid rgba(46, 204, 113, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 400px;
     /* Ensure height matches content roughly */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 20px 50px rgba(46, 204, 113, 0.1);
 }
 
 /* For You Book Graphic */
@@ -55,21 +55,21 @@
     perspective: 1000px;
 }
 
-/* Book Styles (Dark Version - Matching Not-For-You but yellow/neutral) */
+/* Book Styles (Light Version) */
 .book-placeholder-fy {
     width: 240px;
     height: 340px;
-    background: #1a1a1a;
+    background: #fff;
     position: relative;
     transform: rotateY(-15deg);
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #f1c40f;
     font-family: var(--font-heading);
     border-radius: 4px;
-    border: 1px solid #333;
+    border: 1px solid #ddd;
     transition: transform 0.3s ease;
 }
 
@@ -216,8 +216,8 @@
 
 /* Terminal List */
 .fy-terminal-window {
-    background: #111;
-    /* Solid dark for code contrast */
+    background: #ebfef0;
+    /* Light Mint */
     border: 1px solid rgba(46, 204, 113, 0.2);
     border-radius: 8px;
     padding: 25px;
@@ -241,7 +241,7 @@
     gap: 15px;
     margin-bottom: 15px;
     font-size: 1rem;
-    color: #bbb;
+    color: #333;
     transition: all 0.2s ease;
 }
 
@@ -250,18 +250,19 @@
 }
 
 .fy-log-item:hover {
-    color: #fff;
+    color: #000;
     transform: translateX(5px);
 }
 
 .fy-cmd {
-    color: #2ecc71;
+    color: #008f39;
+    /* Darker Green for visibility */
     font-weight: bold;
     flex-shrink: 0;
 }
 
 .fy-result {
-    color: #fff;
+    color: #1a1a1a;
     /* font-family: var(--font-body); Allow sans-serif for readability if desired, but mono fits theme */
 }
 

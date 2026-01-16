@@ -38,11 +38,11 @@
 
 /* Video Placeholder */
 .workshop-video-container {
-    background: #000;
+    background: #ebfef0;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .workshop-video-placeholder {
@@ -51,7 +51,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #aaa;
+    color: #333;
     position: relative;
 }
 

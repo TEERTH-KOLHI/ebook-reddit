@@ -140,18 +140,19 @@
 
 /* --- Dashboard Interface --- */
 .dashboard-interface {
-    background: #0d1117;
-    /* Dark UI bg */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #fff;
+    /* Light UI bg */
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     max-width: 1100px;
     margin: 40px auto 0;
     position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* Header */
 .dashboard-header {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
     padding: 30px 40px 10px;
     position: relative;
 }
@@ -167,7 +168,7 @@
 
 .dh-stat-item .dh-label {
     display: block;
-    color: #888;
+    color: #555;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -177,7 +178,7 @@
 .dh-stat-item .dh-value {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #fff;
+    color: #1a1a1a;
     font-family: var(--font-heading);
     line-height: 1;
 }
@@ -213,11 +214,11 @@
 /* Body */
 .dashboard-body {
     padding: 30px;
-    background: #0f151f;
+    background: #f9f9f9;
 }
 
 .db-label {
-    color: #666;
+    color: #333;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
