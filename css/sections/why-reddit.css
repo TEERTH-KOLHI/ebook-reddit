@@ -129,18 +129,59 @@
 
 /* Mobile */
 @media (max-width: 900px) {
+    .why-reddit-container {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
     .wr-headline {
         font-size: 2.2rem;
+    }
+
+    .wr-header {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .wr-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+        justify-items: center;
+    }
+
+    .wr-col {
+        text-align: center;
+        padding: 30px 20px;
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wr-col-title {
+        display: inline-block;
+        padding-bottom: 10px;
+        border-bottom-width: 2px;
+        /* Ensure border is visible */
+        margin: 0 auto 20px auto;
     }
 
     .wr-col-center {
-        order: -1;
-        /* Show main concept first on mobile? Or stick to flow. Let's stick to flow for now, or maybe top. */
         order: 0;
+        border: none;
+    }
+
+    .wr-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .wr-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
     }
 }

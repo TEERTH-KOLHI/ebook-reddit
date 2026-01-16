@@ -60,3 +60,9 @@
     color: var(--color-text-white);
     font-weight: 400;
 }
+
+@media (max-width: 900px) {
+    .site-header {
+        padding: var(--spacing-md) 0;
+    }
+}

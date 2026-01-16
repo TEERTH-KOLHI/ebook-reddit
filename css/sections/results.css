@@ -177,22 +177,67 @@
 @media (max-width: 900px) {
     .results-container {
         grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     .timeline-track {
         display: none;
-        /* Hide connector line on mobile if stacking is weird, or adjust spacing */
     }
 
     .timeline-wrapper {
         padding-left: 0;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-item {
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .timeline-dot {
         display: none;
     }
 
+    .timeline-content {
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* Maybe add some shadow since track is gone */
+    }
+
     .results-headline {
         font-size: 2.2rem;
+    }
+
+    .dependencies-wrapper {
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dep-item {
+        justify-content: center;
+        /* Center flex items */
+        text-align: center;
+        /* Keep text left-ish or center? let's center for mobile look */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dep-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
     }
 }

@@ -18,13 +18,8 @@
     margin-bottom: var(--spacing-xl);
 }
 
-@media (max-width: 900px) {
-    .authority-main-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-}
 
+/* Part 2: Rest of styles */
 /* Book Placeholder */
 .book-mockup-container {
     display: flex;
@@ -182,7 +177,6 @@
 }
 
 /* --- Divider --- */
-/* --- Divider --- */
 .section-plus-divider {
     position: absolute;
     bottom: -110px;
@@ -216,4 +210,51 @@
     height: 100%;
     padding-bottom: 12px;
     /* Optical centering adjustment */
+}
+
+@media (max-width: 900px) {
+    .authority-main-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+        gap: var(--spacing-xl);
+    }
+
+    .authority-content-text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .authority-headline,
+    .authority-subheadline {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .authority-list {
+        text-align: left;
+        /* Keep the bullet points readable */
+        display: inline-block;
+        margin: 0 auto 20px auto;
+        max-width: 90%;
+        /* Ensure it fits */
+    }
+
+    .section-plus-divider {
+        width: 150px;
+        height: 150px;
+        bottom: -75px;
+        border-width: 15px;
+    }
+
+    .plus-icon {
+        font-size: 6rem;
+    }
+
+    .authority-headline {
+        font-size: 1.8rem;
+    }
 }

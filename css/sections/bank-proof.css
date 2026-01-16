@@ -115,29 +115,6 @@
     will-change: transform, transform-origin;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .bank-proof-headline {
-        font-size: 1.8rem;
-    }
-
-    .proof-card-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .proof-card:nth-child(1),
-    .proof-card:nth-child(2),
-    .proof-card:nth-child(3) {
-        grid-column: auto;
-        grid-row: auto;
-        width: 100%;
-        margin-top: 0;
-        /* Reset negative margin from desktop */
-    }
-}
-
 /* --- Dashboard Interface --- */
 .dashboard-interface {
     background: #fff;
@@ -227,35 +204,6 @@
     /* spacer */
 }
 
-/* Mobile Adjustments for Dashboard */
-@media (max-width: 600px) {
-    .dashboard-header {
-        padding: 20px;
-    }
-
-    .dh-stats-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .dh-stat-item.right {
-        align-self: flex-start;
-    }
-
-    .dh-stat-item .dh-value {
-        font-size: 1.8rem;
-    }
-
-    .dashboard-body {
-        padding: 20px;
-    }
-
-    .dashboard-body {
-        padding: 20px;
-    }
-}
-
 /* --- Amazon Zoom Flyout --- */
 .zoom-result {
     position: absolute;
@@ -275,10 +223,77 @@
     /* Circle lens style */
 }
 
-
-
 .proof-card:hover {
     transform: none;
     /* Disable card lift if desired, or keep it */
     /* box-shadow: none; */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+    .bank-proof-container {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .bank-proof-headline {
+        font-size: 1.8rem;
+    }
+
+    .proof-card-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+        justify-items: center;
+    }
+
+    .proof-card:nth-child(1),
+    .proof-card:nth-child(2),
+    .proof-card:nth-child(3) {
+        grid-column: auto;
+        grid-row: auto;
+        width: 100%;
+        margin-top: 0;
+        /* Reset negative margin from desktop */
+    }
+
+    .dashboard-interface {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .dashboard-header,
+    .dashboard-body {
+        text-align: center;
+    }
+
+    .dh-stats-row {
+        justify-content: center;
+    }
+}
+
+/* Mobile Adjustments for Dashboard specifically */
+@media (max-width: 600px) {
+    .dashboard-header {
+        padding: 20px;
+    }
+
+    .dh-stats-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .dh-stat-item.right {
+        align-self: center;
+    }
+
+    .dh-stat-item .dh-value {
+        font-size: 1.8rem;
+    }
+
+    .dashboard-body {
+        padding: 20px;
+    }
 }

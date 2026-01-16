@@ -227,14 +227,34 @@
 @media (max-width: 900px) {
     .learn-list {
         grid-template-columns: 1fr;
-        /* Stack everything */
+        justify-items: center;
     }
 
     .learn-item:nth-child(n) {
         grid-column: span 1;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .learn-item:nth-child(1) {
+        flex-direction: column;
     }
 
     .learn-headline {
         font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .learn-section .section-header {
+        text-align: center;
+        width: 100%;
+    }
+
+    .learn-description {
+        margin-left: auto;
+        margin-right: auto;
     }
 }

@@ -282,14 +282,48 @@
     .nfu-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+        text-align: center;
+        justify-items: center;
+    }
+
+    .nfu-content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nfu-label {
+        justify-content: center;
+        margin: 0 auto 15px auto;
+    }
+
+    .nfu-headline,
+    .nfu-intro,
+    .nfu-terminal-window {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .nfu-image-wrapper {
         order: -1;
         margin-bottom: var(--spacing-md);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nfu-book-graphic {
+        margin: 0 auto;
     }
 
     .nfu-headline {
         font-size: 2.2rem;
+    }
+
+    .nfu-log-item {
+        text-align: left;
+        /* Keep logs left aligned */
     }
 }

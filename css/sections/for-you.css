@@ -292,15 +292,60 @@
     .for-you-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+        text-align: center;
+        justify-items: center;
+    }
+
+    .fy-content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .fy-label {
+        justify-content: center;
+        margin: 0 auto 15px auto;
+    }
+
+    .fy-headline,
+    .fy-intro,
+    .fy-terminal-window,
+    .fy-bullets-title {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .fy-image-wrapper {
         order: -1;
         /* Image on top? Or maybe below? Let's keep it top for impact */
         margin-bottom: var(--spacing-md);
+        min-height: 300px;
+        /* Reduce height for mobile */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .fy-book-graphic {
+        margin: 0 auto;
     }
 
     .fy-headline {
         font-size: 2.2rem;
+    }
+
+    .fy-sub {
+        border-left: none;
+        border-top: 2px solid #333;
+        padding-left: 0;
+        padding-top: 10px;
+    }
+
+    .fy-log-item {
+        justify-content: flex-start;
+        /* Keep logs left aligned or start? */
+        text-align: left;
     }
 }

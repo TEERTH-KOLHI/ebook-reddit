@@ -175,24 +175,37 @@
 }
 
 /* Mobile */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+    .deliverables-container {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
     .del-headline {
         font-size: 2.2rem;
     }
 
     .del-box {
         padding: 25px;
+        margin: 0 auto;
+        max-width: 100%;
     }
 
     .del-item {
         font-size: 1rem;
         flex-direction: column;
-        /* Optional: Stack icon on top if text is long, but flex-row usually fine */
-        align-items: flex-start;
-        text-align: left;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .del-list {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
     }
 
     .del-icon {
-        margin-bottom: 10px;
+        margin: 0 auto 15px auto;
     }
 }

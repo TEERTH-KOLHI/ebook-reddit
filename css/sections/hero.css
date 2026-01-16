@@ -31,59 +31,6 @@
     padding: 0 var(--spacing-md);
 }
 
-@media (max-width: 900px) {
-    .hero-section {
-        height: auto;
-        min-height: auto;
-        padding-top: 126px;
-        /* More space for header on mobile if it wraps */
-        padding-bottom: 60px;
-        align-items: flex-start;
-        /* Align to top instead of center */
-    }
-
-    .hero-grid {
-        grid-template-columns: 1fr;
-        /* Stack columns */
-        gap: var(--spacing-xl);
-        text-align: center;
-        width: 100%;
-    }
-
-    .hero-content {
-        padding-left: 0;
-        /* Remove left padding in stacked mode */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .hero-headline {
-        font-size: 1.8rem;
-        /* Significantly reduce for mobile */
-        margin-top: var(--spacing-md);
-    }
-
-    .hero-subheadline-strong {
-        font-size: 1.2rem;
-    }
-
-    /* Re-order to put video on top if desired, or keep as is. Usually image on top is good. */
-    .hero-media {
-        order: -1;
-        width: 100%;
-        max-width: 100%;
-        /* Allow full width */
-        margin-bottom: var(--spacing-lg);
-        /* Add space between video and text */
-    }
-
-    .video-placeholder {
-        aspect-ratio: 16/9;
-    }
-}
-
 /* Media / Video Side */
 .hero-media {
     position: relative;
@@ -265,4 +212,83 @@
     background-clip: text;
     color: transparent;
     font-weight: 800;
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        height: auto;
+        min-height: auto;
+        padding-top: 126px;
+        /* More space for header on mobile if it wraps */
+        padding-bottom: 60px;
+        align-items: flex-start;
+        /* Align to top instead of center */
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        /* Stack columns */
+        gap: var(--spacing-xl);
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        /* Remove left padding in stacked mode */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-headline,
+    .hero-subheadline,
+    .hero-description,
+    .hero-cta-wrapper,
+    .hero-stats-row {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .hero-cta-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-stats-row {
+        justify-content: center;
+    }
+
+    .hero-headline {
+        font-size: 1.8rem;
+        /* Significantly reduce for mobile */
+        margin-top: var(--spacing-md);
+    }
+
+    .hero-subheadline-strong {
+        font-size: 1.2rem;
+    }
+
+    /* Re-order to put video on top if desired, or keep as is. Usually image on top is good. */
+    .hero-media {
+        order: -1;
+        width: 100%;
+        max-width: 100%;
+        /* Allow full width */
+        margin-bottom: var(--spacing-lg);
+        /* Add space between video and text */
+    }
+
+    .video-placeholder {
+        aspect-ratio: 16/9;
+    }
+
+    .cta-trust-badges {
+        justify-content: center;
+    }
 }

@@ -7,10 +7,10 @@
 /* @import 'layout/footer.css'; */
 @import 'layout/grid.css';
 
-*/ body {
+/* body {
     background-color: #ebfef0;
     color: #333;
-}
+} */
 
 @import 'sections/hero.css';
 @import 'sections/authority.css';

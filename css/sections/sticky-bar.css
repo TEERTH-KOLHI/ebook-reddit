@@ -102,9 +102,11 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .sticky-bar {
         padding: 5px 0;
+        height: auto;
+        /* Allow auto height if things wrap */
     }
 
     .sticky-text {
@@ -114,6 +116,10 @@
 
     .sticky-bar-container {
         justify-content: space-between;
+        /* Space around implies centering if taken literally but mostly just layout */
+        /* If we want centered: */
+        justify-content: center;
+        gap: 20px;
     }
 
     .sticky-price-new {
@@ -121,10 +127,10 @@
     }
 
     .sticky-cta-btn {
-        padding: 6px 16px;
+        padding: 8px 16px;
     }
 
-    .sticky-btn-text {
+    .cta-main-text {
         font-size: 0.9rem;
     }
 }

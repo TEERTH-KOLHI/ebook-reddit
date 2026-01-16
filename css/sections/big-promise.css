@@ -290,18 +290,67 @@
 @media (max-width: 900px) {
     .promise-grid {
         grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     .workshop-video-container {
         margin-bottom: var(--spacing-lg);
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .puzzle-grid {
         gap: 10px;
+        justify-content: center;
+    }
+
+    .puzzle-grid-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .puzzle-text-box {
         font-size: 0.9rem;
         padding: 15px;
+    }
+
+    .community-grid {
+        text-align: center;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .community-text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .community-headline,
+    .community-sub {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .community-features {
+        display: inline-block;
+        margin: 0 auto;
+        text-align: left;
+        max-width: 90%;
+    }
+
+    .big-promise-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .big-promise-cta .cta-btn {
+        margin: 0 auto;
     }
 }
