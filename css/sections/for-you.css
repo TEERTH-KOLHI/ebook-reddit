@@ -1,6 +1,6 @@
 /* --- For You Section (System Fit) --- */
 .for-you-section {
-    padding: var(--section-padding) 0;
+    padding: var(--section-padding) 0 10px;
     margin-bottom: 0;
 
     background: #ebfef0;

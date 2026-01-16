@@ -3,7 +3,7 @@
     background-color: #ebfef0;
     padding-top: 150px;
     /* Space for the overlapping divider from previous section */
-    padding-bottom: var(--section-padding);
+    padding-bottom: 10px;
     color: #333;
     position: relative;
     z-index: 1;

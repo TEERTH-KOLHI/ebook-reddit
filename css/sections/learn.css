@@ -1,6 +1,6 @@
 /* --- Learn Section (Creative Bento Design) --- */
 .learn-section {
-    padding-top: var(--section-padding);
+    padding-top: 0;
     padding-bottom: var(--section-padding);
     /* Extra space for hover effects */
     background: #ebfef0;

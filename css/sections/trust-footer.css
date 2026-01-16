@@ -1,12 +1,13 @@
 /* --- Trust Footer Section --- */
 .trust-footer {
-    padding: 120px 0 220px 0;
-    /* Matched to Hero Section */
-    background: #ebfef0;
+    padding: 60px 0 0 0;
+    /* Removed bottom padding so box extends down */
+    background: transparent;
+    /* Transparent to show box */
     color: #333;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    /* Subtle separator */
+    border-top: none;
+    /* Remove separator */
     font-size: 0.9rem;
     line-height: 1.6;
 }
@@ -15,7 +16,12 @@
     max-width: var(--container-width);
     /* Readability width */
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 40px 40px 90px 40px;
+    /* 70px sticky height + 20px gap */
+    background: #fff;
+    border-radius: 0;
+    /* Removed rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* Logo Area */
@@ -39,14 +45,14 @@
     margin-bottom: var(--spacing-md);
     color: #64748b;
     /* Darker slate text */
-    font-size: 0.85rem;
+    font-size: 1rem;
 }
 
 .tf-disclaimer-main {
     margin-bottom: var(--spacing-xl);
     color: #475569;
     /* Muted text */
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     text-align: justify;
     text-align-last: center;
     /* Center last line */
