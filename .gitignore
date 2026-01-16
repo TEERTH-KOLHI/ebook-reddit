@@ -1,0 +1,19 @@
+# Security: Secrets and Configs
+config.php
+.env
+
+# Dependencies
+node_modules/
+vendor/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+error_log
+
+# IDE Settings
+.vscode/
+.idea/
