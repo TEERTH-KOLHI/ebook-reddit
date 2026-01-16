@@ -27,16 +27,4 @@
 @import 'sections/trust-footer.css';
 @import 'sections/sticky-bar.css';
 
-/* Headline Overrides (Title Case matching Hero) */
-.promise-heading,
-.cert-heading,
-.learn-headline,
-.fy-headline,
-.nfu-headline,
-.results-headline,
-.wr-headline,
-.stats-headline,
-.del-headline,
-.pricing-headline {
-    text-transform: none !important;
-}
+/* Headline Overrides removed to allow Uppercase */

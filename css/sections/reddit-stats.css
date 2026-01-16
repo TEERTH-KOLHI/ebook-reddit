@@ -28,6 +28,7 @@
     margin-bottom: var(--spacing-sm);
     color: #071f18;
     line-height: 1.1;
+    text-transform: uppercase;
 }
 
 .stats-sub {

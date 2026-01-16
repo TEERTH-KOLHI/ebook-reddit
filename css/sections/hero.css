@@ -167,7 +167,7 @@
     margin-bottom: var(--spacing-md);
     letter-spacing: 0.5px;
     color: #071f18;
-    text-transform: none;
+    text-transform: uppercase;
     /* The new headline is Mixed Case in the image */
 }
 
@@ -182,7 +182,7 @@
     color: transparent;
     animation: gradient-shift 5s ease infinite alternate;
     margin-bottom: var(--spacing-md);
-    text-transform: none;
+    text-transform: uppercase;
     display: inline-block;
     padding-bottom: 2px;
 }
@@ -212,7 +212,7 @@
     background-color: var(--color-cta-yellow);
     color: var(--color-cta-text);
     padding: 12px 32px;
-    border-radius: 6px;
+    border-radius: 4px;
     width: 100%;
     max-width: 400px;
     display: flex;

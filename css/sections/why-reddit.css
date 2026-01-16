@@ -30,6 +30,7 @@
     margin-bottom: var(--spacing-sm);
     color: #0f3d32;
     line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .wr-sub {

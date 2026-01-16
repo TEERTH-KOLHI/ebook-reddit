@@ -26,6 +26,7 @@
     margin-bottom: var(--spacing-sm);
     color: #071f18;
     line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .del-icon-header {

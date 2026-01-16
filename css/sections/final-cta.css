@@ -19,7 +19,9 @@
     font-family: var(--font-heading);
     margin-bottom: var(--spacing-lg);
     line-height: 1.2;
+    line-height: 1.2;
     color: #071f18;
+    text-transform: uppercase;
 }
 
 .final-cta-sub {

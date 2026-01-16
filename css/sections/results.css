@@ -30,6 +30,7 @@
     font-family: var(--font-heading);
     margin-bottom: var(--spacing-sm);
     color: #071f18;
+    text-transform: uppercase;
 }
 
 .results-sub {

@@ -42,6 +42,7 @@
     color: #1a1a1a;
     line-height: 1.1;
     margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
 }
 
 .learn-description {
