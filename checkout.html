@@ -475,6 +475,7 @@
 
     <!-- Intl Tel Input JS -->
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const input = document.querySelector("#phone");
@@ -492,26 +493,106 @@
                 separateDialCode: true,
                 preferredCountries: ['us', 'gb', 'in', 'pk'],
                 allowDropdown: true,
+                allowDropdown: true,
                 excludeCountries: []
             });
 
-            // Adjust input padding based on selected flag width (handled by library usually, but good to check)
+            // Restrict input to numbers only (allow spaces/dashes if plugin adds them, but block letters)
+            input.addEventListener('input', function (e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
 
             // Form validation/submit handler
             const form = document.querySelector('#checkout-form');
-            form.addEventListener('submit', function (e) {
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
-                if (form.checkValidity()) {
-                    // Check if phone is valid
-                    if (iti.isValidNumber()) {
-                        const fullNumber = iti.getNumber();
-                        alert('Proceeding to payment with number: ' + fullNumber);
-                        // Here you would submit the fullNumber to your backend
-                    } else {
-                        alert('Please enter a valid phone number.');
+                if (form.checkValidity() && iti.isValidNumber()) {
+                    const firstName = document.querySelector('input[placeholder="First name"]').value;
+                    const lastName = document.querySelector('input[placeholder="Last name"]').value;
+                    const email = document.querySelector('input[placeholder="Email"]').value;
+                    const phone = iti.getNumber();
+
+                    // Disable button
+                    const btn = document.querySelector('.checkout-btn');
+                    const originalText = btn.innerText;
+                    btn.innerText = 'Processing...';
+                    btn.disabled = true;
+
+                    try {
+                        // 1. Create Order
+                        const response = await fetch('create-order.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                amount: 29900, // Amount in paise (299 INR)
+                                currency: 'INR'
+                            })
+                        });
+
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        const order = await response.json();
+
+                        // 2. Open Razorpay
+                        const options = {
+                            "key": "YOUR_KEY_ID_HERE", // Replaced by backend but needed for init if not proxied, actually Razorpay uses client key here.
+                            // Ideally we fetch the key from backend too or use env var if building. 
+                            // For simplicity, we can fetch a /config endpoint or just hardcode if user provides it in .env and we inject it?
+                            // Better: Fetch key from backend /config endpoint to keep it secure-ish (though client key is public).
+                            // Let's create a small /config endpoint or just assume the user will put their key here.
+                            // I'll add a TODO to fetch it or user to replace it.
+                            // Actually, let's add a /get-razorpay-key endpoint to server.js
+
+                            "amount": order.amount,
+                            "currency": order.currency,
+                            "name": "Reddit to Riches",
+                            "description": "Ebook Purchase",
+                            "image": "assets/images/book-cover.jpg", // Make sure this exists
+                            "order_id": order.id,
+                            "handler": function (response) {
+                                // 3. Payment Success
+                                // alert(response.razorpay_payment_id);
+                                // Redirect to download
+                                window.location.href = 'assets/ebook.pdf'; // Make sure this file exists
+                                // Or trigger auto download
+                                const link = document.createElement('a');
+                                link.href = 'assets/ebook.pdf';
+                                link.download = 'Reddit_to_Riches.pdf';
+                                document.body.appendChild(link);
+                                link.click();
+                                document.body.removeChild(link);
+                            },
+                            "prefill": {
+                                "name": firstName + " " + lastName,
+                                "email": email,
+                                "contact": phone
+                            },
+                            "theme": {
+                                "color": "#2ecc71"
+                            }
+                        };
+
+                        // We need the key. I will add a fetch for key id.
+                        const keyResponse = await fetch('get-key.php');
+                        const keyData = await keyResponse.json();
+                        options.key = keyData.key;
+
+                        const rzp1 = new Razorpay(options);
+                        rzp1.on('payment.failed', function (response) {
+                            alert("Payment Failed: " + response.error.description);
+                            btn.innerText = originalText;
+                            btn.disabled = false;
+                        });
+                        rzp1.open();
+
+                    } catch (error) {
+                        console.error(error);
+                        alert('Something went wrong. Please try again.');
+                        btn.innerText = originalText;
+                        btn.disabled = false;
                     }
+
                 } else {
-                    alert('Please fill in all required fields.');
+                    alert('Please fill in all required fields correctly.');
                 }
             });
         });
