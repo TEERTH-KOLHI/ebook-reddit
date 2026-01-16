@@ -1,0 +1,137 @@
+/* --- Testimonials Section (Wall of Love) --- */
+.testimonials-section {
+    padding: var(--section-padding) 0;
+    background: #ebfef0;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonials-label {
+    display: inline-block;
+    background: rgba(46, 204, 113, 0.1);
+    color: #27ae60;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.testimonials-headline {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #071f18;
+    text-transform: uppercase;
+}
+
+.testimonials-sub {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Masonry Grid Layout */
+.testimonials-grid {
+    column-count: 3;
+    column-gap: 30px;
+}
+
+.testimonial-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Soft, premium shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    break-inside: avoid;
+    /* Prevent breaking across columns */
+    position: relative;
+    display: inline-block;
+    /* Essential for column layout */
+    width: 100%;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Container */
+.testimonial-image-wrapper {
+    width: 100%;
+    position: relative;
+    padding: 15px;
+    background: #f8fcf9;
+    /* Slight tint behind screenshot */
+}
+
+.testimonial-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Verified Check Badge on Card */
+.verified-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .testimonials-grid {
+        column-count: 1;
+        /* Single column on mobile */
+    }
+
+    .testimonials-headline {
+        font-size: 2.2rem;
+    }
+
+    .testimonials-container {
+        padding-left: 6px;
+        /* Consistency padding */
+        padding-right: 6px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+
+    /* Tablet tweak */
+    .testimonials-grid {
+        column-count: 2;
+    }
+}
