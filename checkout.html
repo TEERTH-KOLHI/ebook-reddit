@@ -337,6 +337,116 @@
             max-width: 100%;
             width: 300px;
         }
+
+        /* Order Bump Styling */
+        .order-bump-box {
+            background-color: #fff9e6;
+            border: 2px dashed #f1c40f;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .order-bump-checkbox {
+            margin-top: 5px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .order-bump-content h4 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+            color: #d35400;
+            font-weight: 700;
+        }
+
+        .order-bump-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.3;
+        }
+
+        .blink-text {
+            animation: blinker 1.5s linear infinite;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Book Preview Styling */
+        .preview-section {
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+
+        .preview-title {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .preview-page {
+            background: #fff;
+            border: 1px solid #ddd;
+            aspect-ratio: 0.7;
+            /* A4-ish ratio */
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 8px;
+            font-size: 4px;
+            /* Tiny text for mock visual */
+            overflow: hidden;
+            color: #ccc;
+            position: relative;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .preview-page:hover {
+            transform: scale(1.5);
+            z-index: 10;
+        }
+
+        .preview-page h1 {
+            background: #eee;
+            height: 6px;
+            width: 80%;
+            margin-bottom: 4px;
+        }
+
+        .preview-page p {
+            background: #f9f9f9;
+            height: 2px;
+            margin-bottom: 2px;
+            width: 100%;
+        }
+
+        .preview-page-label {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            font-size: 8px;
+            color: #999;
+        }
     </style>
 </head>
 
@@ -385,6 +495,16 @@
                         <div class="phone-input-group">
                             <!-- intl-tel-input will handle the flag -->
                             <input type="tel" class="form-input" id="phone" placeholder="Phone number" required>
+                        </div>
+                    </div>
+
+                    <!-- Order Bump -->
+                    <div class="order-bump-box">
+                        <input type="checkbox" id="order-bump" class="order-bump-checkbox">
+                        <div class="order-bump-content">
+                            <h4>YES! Add "Notion Implementation Checklist" (+₹99)</h4>
+                            <p>Get the plug-and-play Notion template to deploy this strategy in minutes. <span
+                                    class="blink-text">Highly Recommended!</span></p>
                         </div>
                     </div>
 
@@ -464,7 +584,51 @@
             <div class="price-stack">
                 <div class="total-value">Regular Price: <span class="total-value-strike">₹1,199</span></div>
                 <div class="get-it-today">Get it Today for Only:</div>
-                <div class="final-price">₹299</div>
+                <div class="final-price" id="final-price-display">₹299</div>
+            </div>
+
+            <!-- Book Preview Section (New) -->
+            <div class="preview-section">
+                <h3 class="preview-title">Peek Inside The System...</h3>
+                <div class="preview-grid">
+                    <!-- Fake Page 1 -->
+                    <div class="preview-page" title="Chapter 1: The Foundation">
+                        <h1></h1>
+                        <p style="width:90%"></p>
+                        <p style="width:95%"></p>
+                        <p style="width:80%"></p>
+                        <br>
+                        <p style="width:100%"></p>
+                        <p style="width:85%"></p>
+                        <p style="width:90%"></p>
+                        <div class="preview-page-label">Pg 12</div>
+                    </div>
+                    <!-- Fake Page 2 -->
+                    <div class="preview-page" title="Chapter 3: The Comment Strategy">
+                        <h1></h1>
+                        <p style="width:100%"></p>
+                        <p style="width:100%"></p>
+                        <p style="width:100%"></p>
+                        <br>
+                        <div style="background:#eee; height:20px; width:100%; margin:2px 0;"></div>
+                        <p style="width:90%"></p>
+                        <p style="width:95%"></p>
+                        <div class="preview-page-label">Pg 24</div>
+                    </div>
+                    <!-- Fake Page 3 -->
+                    <div class="preview-page" title="Chapter 5: Scaling Up">
+                        <h1></h1>
+                        <p style="width:88%"></p>
+                        <p style="width:92%"></p>
+                        <p style="width:96%"></p>
+                        <br>
+                        <p style="width:100%"></p>
+                        <p style="width:85%"></p>
+                        <p style="width:90%"></p>
+                        <div class="preview-page-label">Pg 41</div>
+                    </div>
+                </div>
+                <p style="text-align:center; font-size:0.8rem; color:#888;">*Hover pages to zoom</p>
             </div>
 
 
@@ -502,6 +666,23 @@
                 this.value = this.value.replace(/[^0-9]/g, '');
             });
 
+            // Dynamic Price Update for Order Bump
+            const bumpCheckbox = document.getElementById('order-bump');
+            const priceDisplay = document.getElementById('final-price-display');
+            const basePrice = 299;
+            const bumpPrice = 99;
+
+            bumpCheckbox.addEventListener('change', function () {
+                if (this.checked) {
+                    priceDisplay.innerText = '₹' + (basePrice + bumpPrice);
+                    // Optional: Add a subtle flash effect to draw attention
+                    priceDisplay.style.color = '#e74c3c';
+                    setTimeout(() => priceDisplay.style.color = '#2ecc71', 300);
+                } else {
+                    priceDisplay.innerText = '₹' + basePrice;
+                }
+            });
+
             // Form validation/submit handler
             const form = document.querySelector('#checkout-form');
             form.addEventListener('submit', async function (e) {
@@ -511,6 +692,12 @@
                     const lastName = document.querySelector('input[placeholder="Last name"]').value;
                     const email = document.querySelector('input[placeholder="Email"]').value;
                     const phone = iti.getNumber();
+
+                    // Check for Order Bump
+                    const hasBump = document.getElementById('order-bump').checked;
+                    const baseAmount = 29900; // ₹299.00
+                    const bumpAmount = 9900;  // ₹99.00
+                    const finalAmount = hasBump ? (baseAmount + bumpAmount) : baseAmount;
 
                     // Disable button
                     const btn = document.querySelector('.checkout-btn');
@@ -524,7 +711,7 @@
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({
-                                amount: 29900, // Amount in paise (299 INR)
+                                amount: finalAmount,
                                 currency: 'INR'
                             })
                         });
