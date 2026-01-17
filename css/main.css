@@ -28,4 +28,9 @@
 @import 'sections/trust-footer.css';
 @import 'sections/sticky-bar.css';
 
+@import 'sections/about-author.css';
+@import 'sections/sneak-peek.css';
+@import 'sections/faq.css';
+
+
 /* Headline Overrides removed to allow Uppercase */

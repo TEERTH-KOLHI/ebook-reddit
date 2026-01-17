@@ -55,4 +55,75 @@ document.addEventListener('DOMContentLoaded', () => {
             resultDiv.style.backgroundPosition = `${bgX}px ${bgY}px`;
         });
     });
+    // FAQ Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Toggle current
+            item.classList.toggle('active');
+        });
+    });
+
+    // Sneak Peek Carousel Logic
+    const spCards = document.querySelectorAll('.sp-page-card');
+    const prevBtn = document.querySelector('.sp-nav-btn.prev-btn');
+    const nextBtn = document.querySelector('.sp-nav-btn.next-btn');
+    let currentIndex = 1; // Start at middle (data-index 1)
+
+    function updateCarousel() {
+        spCards.forEach((card, index) => {
+            card.className = 'sp-page-card'; // Reset classes
+            card.style.opacity = '';
+            card.style.transform = '';
+            card.style.zIndex = '';
+
+            // Calc indices for wrapping
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) prevIndex = spCards.length - 1;
+
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= spCards.length) nextIndex = 0;
+
+            if (index === currentIndex) {
+                card.classList.add('active');
+            } else if (index === prevIndex) {
+                card.classList.add('prev');
+            } else if (index === nextIndex) {
+                card.classList.add('next');
+            } else {
+                // If out of view
+                card.style.opacity = '0';
+            }
+        });
+    }
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            // Infinite loop: if at 0, go to length-1, else decrement
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = spCards.length - 1;
+            }
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            // Infinite loop: if at length-1, go to 0, else increment
+            if (currentIndex < spCards.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        });
+    }
+
 });

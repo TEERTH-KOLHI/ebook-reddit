@@ -1,0 +1,119 @@
+/* FAQ Section - Light Theme */
+.faq-section {
+    padding: 80px 0;
+    background-color: var(--color-bg-dark);
+    /* Light Greenish base */
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.faq-sub {
+    color: #666;
+}
+
+/* Accordion */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.faq-item.active {
+    border-color: #FF4500;
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.1);
+}
+
+.faq-question {
+    padding: 20px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.faq-question:hover {
+    color: #FF4500;
+}
+
+.faq-toggle-icon {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle-icon::before,
+.faq-toggle-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #FF4500;
+    border-radius: 2px;
+}
+
+/* Vertical line */
+.faq-toggle-icon::before {
+    top: 0;
+    left: 6px;
+    width: 2px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+/* Horizontal line */
+.faq-toggle-icon::after {
+    top: 6px;
+    left: 0;
+    width: 14px;
+    height: 2px;
+}
+
+.faq-item.active .faq-toggle-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+    color: #555;
+    line-height: 1.6;
+    padding: 0 25px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding-bottom: 25px;
+    transition: max-height 0.5s ease-in-out;
+}

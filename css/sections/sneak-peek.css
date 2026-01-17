@@ -1,0 +1,177 @@
+/* Sneak Peek / Look Inside Section - Light Theme */
+.sneak-peek-section {
+    padding: 100px 0;
+    background-color: var(--color-bg-dark);
+    /* Light Greenish */
+    overflow: hidden;
+    color: #1a1a1a;
+}
+
+.sneak-peek-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.sp-header {
+    margin-bottom: 60px;
+}
+
+.sp-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.sp-subhead {
+    color: #555;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Carousel Container */
+.sp-carousel-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.sp-scene {
+    position: relative;
+    height: 500px;
+    /* Adjust based on image aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.sp-page-card {
+    position: absolute;
+    width: 350px;
+    height: 480px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+    overflow: hidden;
+    /* Default state: stacked */
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    z-index: 1;
+    border: 1px solid #ddd;
+}
+
+/* Active Class Logic */
+.sp-page-card.active {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotateY(0deg);
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(46, 204, 113, 0.15);
+}
+
+.sp-page-card.prev {
+    opacity: 0.6;
+    transform: translateX(-120%) scale(0.85) rotateY(15deg);
+    z-index: 5;
+}
+
+.sp-page-card.next {
+    opacity: 0.6;
+    transform: translateX(120%) scale(0.85) rotateY(-15deg);
+    z-index: 5;
+}
+
+/* Content inside the card */
+.sp-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+}
+
+.sp-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: blur(4px);
+    transition: filter 0.3s ease;
+}
+
+.sp-page-card:hover .sp-card-img.active-img {
+    filter: blur(0);
+}
+
+/* Reveal Badge */
+.sp-reveal-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(26, 26, 26, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.sp-page-card:hover .sp-reveal-badge {
+    opacity: 0;
+}
+
+/* Controls */
+.sp-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.sp-nav-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #1a1a1a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sp-nav-btn:hover {
+    border-color: #2ecc71;
+    color: #2ecc71;
+    transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .sp-scene {
+        height: 400px;
+    }
+
+    .sp-page-card {
+        width: 280px;
+        height: 380px;
+    }
+
+    .sp-page-card.prev,
+    .sp-page-card.next {
+        opacity: 0;
+    }
+}
