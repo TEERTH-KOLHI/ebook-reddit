@@ -56,3 +56,14 @@
 .sticky-bar .cta-trust-badges span {
     color: #fff !important;
 }
+
+/* Blinking Text Animation */
+.blink-text {
+    animation: blinker 1.5s linear infinite !important;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

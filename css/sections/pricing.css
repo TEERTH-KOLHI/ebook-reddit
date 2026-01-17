@@ -1,6 +1,6 @@
 /* --- Pricing Section (Simple Investment) --- */
 .pricing-section {
-    padding: var(--section-padding) 0;
+    padding: var(--section-padding) 0 0 0;
     background: #ebfef0;
     color: #333;
     position: relative;

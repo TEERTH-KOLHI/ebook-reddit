@@ -321,8 +321,8 @@
         order: -1;
         /* Image on top? Or maybe below? Let's keep it top for impact */
         margin-bottom: var(--spacing-md);
-        min-height: 300px;
-        /* Reduce height for mobile */
+        min-height: 400px;
+        /* Match Not-For-You height */
         width: 100%;
         display: flex;
         justify-content: center;

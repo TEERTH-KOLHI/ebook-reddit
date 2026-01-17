@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const spCards = document.querySelectorAll('.sp-page-card');
     const prevBtn = document.querySelector('.sp-nav-btn.prev-btn');
     const nextBtn = document.querySelector('.sp-nav-btn.next-btn');
-    let currentIndex = 1; // Start at middle (data-index 1)
+    let currentIndex = 0; // Start at first item (data-index 0)
 
     function updateCarousel() {
         spCards.forEach((card, index) => {
