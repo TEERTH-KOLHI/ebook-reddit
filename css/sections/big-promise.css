@@ -1,7 +1,8 @@
 /* --- Big Promise Section --- */
 .big-promise-section {
     background-color: #ebfef0;
-    padding-top: 150px;
+    padding-top: 60px;
+    /* Reduced from 150px */
     /* Space for the overlapping divider from previous section */
     padding-bottom: 10px;
     color: #333;
