@@ -62,6 +62,14 @@ function sendDeliveryEmail($toEmail)
     $subject = "Access Granted: Reddit to Riches E-Book + Community";
 
     // HTML Message
+    // Generate Expiring Link
+    $expires = time() + (24 * 60 * 60); // 24 hours from now
+    $signature = hash_hmac('sha256', $toEmail . $expires, RAZORPAY_WEBHOOK_SECRET);
+    // Construct the full URL - assuming current host. In production, hardcode the domain if needed.
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+    $host = $_SERVER['HTTP_HOST'] ?? 'yourdomain.com'; // Fallback
+    $downloadLink = "$protocol://$host/download.php?email=" . urlencode($toEmail) . "&expires=$expires&signature=$signature";
+
     $message = "
     <html>
     <head>
@@ -81,22 +89,26 @@ function sendDeliveryEmail($toEmail)
                 <h2>Thank You for Your Order!</h2>
             </div>
             <div class='content'>
-                <p>Hi there,</p>
-                <p>Congratulations on taking the first step! We've successfully received your payment.</p>
+                <p><strong>Hi there,</strong></p>
+                <p>Thank you for your purchase! We are thrilled to have you onboard.</p>
+                <p>You have successfully unlocked access to the <strong>Reddit to Riches</strong> system. Here are your exclusive resources:</p>
                 
-                <h3>Files & Links:</h3>
+                <hr style='border: 0; border-top: 1px solid #eee; margin: 20px 0;'>
+
+                <h3 style='color: #333;'>1. Your E-Book</h3>
+                <p>Click the button below to download your copy. Please save it to your device immediately.</p>
+                <p><em><strong>Note:</strong> For security, this personal link expires in <strong>24 hours</strong>.</em></p>
+                <p style='text-align: center;'><a href='" . $downloadLink . "' class='button'>Download E-Book Now</a></p>
                 
-                <p><strong>1. Download Your E-Book:</strong></p>
-                <p><a href='" . EBOOK_LINK . "' class='button'>Download Reddit to Riches PDF</a></p>
-                
-                <p><strong>2. Join the VIP Community:</strong></p>
-                <p><a href='" . TELEGRAM_LINK . "' style='color: #2ecc71; font-weight: bold;'>Click here to join the Telegram Group</a></p>
+                <h3 style='color: #333; margin-top: 30px;'>2. The VIP Community</h3>
+                <p>Don't forget to join our exclusive Telegram group to network with other high-achievers.</p>
+                <p style='text-align: center;'><a href='" . TELEGRAM_LINK . "' style='color: #2ecc71; font-weight: bold; font-size: 16px; text-decoration: none;'>👉 Click Here to Join the Telegram Group</a></p>
                 
                 <hr style='border: 0; border-top: 1px solid #eee; margin: 20px 0;'>
                 
-                <p>If you have any trouble accessing the files, just reply to this email.</p>
+                <p style='font-size: 14px; color: #777;'>If you have any issues accessing these files, please reply to this email closely describing the issue.</p>
                 
-                <p>Cheers,<br>Arpit Sharma</p>
+                <p>To your success,<br><strong>Arpit Sharma</strong></p>
             </div>
             <div class='footer'>
                 <p>&copy; " . date("Y") . " Reddit to Riches. All rights reserved.</p>
