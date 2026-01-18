@@ -64,11 +64,12 @@
 
 /* Links Grid */
 .tf-links {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
     margin-bottom: var(--spacing-xl);
-    max-width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -96,11 +97,8 @@
 /* Mobile */
 @media (max-width: 900px) {
     .tf-links {
-        grid-template-columns: 1fr;
-        /* Stack links vertically or keep 2x2? Let's stack for pure center. Or 2 col center */
-        /* If user wants centered "sections", usually implies text center. */
-        grid-template-columns: 1fr;
         gap: 15px;
+        /* Allow wrapping on small mobile but keep centered logic */
     }
 
     .tf-container {
