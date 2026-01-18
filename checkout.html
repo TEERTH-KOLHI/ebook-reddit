@@ -494,7 +494,8 @@
                     <div class="form-group">
                         <div class="phone-input-group">
                             <!-- intl-tel-input will handle the flag -->
-                            <input type="tel" class="form-input" id="phone" placeholder="Phone number" required>
+                            <input type="tel" class="form-input" id="phone" placeholder="Phone number" required
+                                inputmode="numeric">
                         </div>
                     </div>
 
@@ -657,14 +658,11 @@
                 separateDialCode: true,
                 preferredCountries: ['us', 'gb', 'in', 'pk'],
                 allowDropdown: true,
-                allowDropdown: true,
+                strictMode: true,
                 excludeCountries: []
             });
 
-            // Restrict input to numbers only (allow spaces/dashes if plugin adds them, but block letters)
-            input.addEventListener('input', function (e) {
-                this.value = this.value.replace(/[^0-9]/g, '');
-            });
+
 
             // Dynamic Price Update for Order Bump
             const bumpCheckbox = document.getElementById('order-bump');
