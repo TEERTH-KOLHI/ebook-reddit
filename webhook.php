@@ -31,7 +31,7 @@ if ($event === 'payment.captured') {
     $payment = $data['payload']['payment']['entity'];
     $email = $payment['email'];
     $amount = $payment['amount'] / 100; // Amount in rupees
-    
+
     // Send delivery email
     $deliverySent = sendDeliveryEmail($email);
 
@@ -51,10 +51,10 @@ if ($event === 'payment.captured') {
 /**
  * Sends the access email using standard PHP mail()
  */
-function sendDeliveryEmail($toEmail) {
+function sendDeliveryEmail($toEmail)
+{
     // --- CONFIGURATION ---
-    $ebookLink = "YOUR_EBOOK_LINK_HERE";       // REPLACE THIS
-    $telegramLink = "YOUR_TELEGRAM_LINK_HERE"; // REPLACE THIS
+    // Links are now loaded from config.php
     $fromName = "Reddit to Riches";
     $fromEmail = "info@arpitsharmawriting.com"; // Verified sender matching your domain
     // ---------------------
@@ -87,10 +87,10 @@ function sendDeliveryEmail($toEmail) {
                 <h3>Files & Links:</h3>
                 
                 <p><strong>1. Download Your E-Book:</strong></p>
-                <p><a href='{$ebookLink}' class='button'>Download Reddit to Riches PDF</a></p>
+                <p><a href='" . EBOOK_LINK . "' class='button'>Download Reddit to Riches PDF</a></p>
                 
                 <p><strong>2. Join the VIP Community:</strong></p>
-                <p><a href='{$telegramLink}' style='color: #2ecc71; font-weight: bold;'>Click here to join the Telegram Group</a></p>
+                <p><a href='" . TELEGRAM_LINK . "' style='color: #2ecc71; font-weight: bold;'>Click here to join the Telegram Group</a></p>
                 
                 <hr style='border: 0; border-top: 1px solid #eee; margin: 20px 0;'>
                 
