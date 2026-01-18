@@ -797,6 +797,64 @@
         margin-right: auto;
         margin-bottom: var(--spacing-lg);
     }
+}
+
+@media (max-width: 768px) {
+    /* Stack the animation container */
+    .workshop-video-placeholder {
+        aspect-ratio: auto;
+        height: auto;
+        min-height: 600px; /* Give enough room for stacked content */
+    }
+    
+    .process-content-wrapper {
+        flex-direction: column; /* Stack vertically */
+        overflow: visible; /* Allow content to flow */
+        padding-bottom: 20px;
+    }
+
+    .mobile-visual-stage {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        padding-top: 10px;
+    }
+
+    /* Scale up the phone slightly for visibility if needed, or keep standard */
+    .mobile-device {
+        transform: scale(1); 
+    }
+
+    .process-steps {
+        width: 100%;
+        padding-left: 0;
+        gap: 12px;
+    }
+
+    .step-item {
+        transform: none !important; /* Reset initial transforms to avoid layout issues */
+        opacity: 0.5; /* Keep opacity logic */
+        /* Ensure readability */
+        padding: 12px;
+    }
+    
+    /* We need to override the keyframes or ensure they work in this context. 
+       The keyframes use translateX which is fine for the "active" indication. */
+    
+    .animated-process-container {
+        position: relative; /* Unlock from absolute to let content flow */
+        height: auto;
+    }
+
+    /* Adjust step descriptions for mobile readability */
+    .step-desc {
+        font-size: 0.8rem;
+    }
+    
+    .step-title {
+        font-size: 1rem;
+    }
+}
 
     .puzzle-grid-container {
         width: 100%;
