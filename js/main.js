@@ -126,4 +126,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Hero Video Robust Autoplay Logic
+    const heroVideo = document.getElementById('hero-video');
+    const audioControl = document.getElementById('audio-control');
+    const audioLabel = document.getElementById('audio-label');
+
+    if (heroVideo && audioControl) {
+        // Function to update UI state
+        const updateUIState = () => {
+            if (heroVideo.muted) {
+                // Muted State
+                audioControl.classList.remove('is-unmuted');
+                audioLabel.textContent = 'Unmute';
+            } else {
+                // Unmuted State
+                audioControl.classList.add('is-unmuted');
+                audioLabel.textContent = 'Mute';
+            }
+        };
+
+        // Try to play with sound first
+        const initVideo = async () => {
+            try {
+                heroVideo.muted = false;
+                await heroVideo.play();
+                // If successful, update UI
+                updateUIState();
+            } catch (err) {
+                // Autoplay with sound blocked
+                console.log('Autoplay with sound blocked, falling back to muted.');
+                heroVideo.muted = true;
+                try {
+                    await heroVideo.play();
+                    updateUIState();
+                } catch (mutedErr) {
+                    console.error('Autoplay failed:', mutedErr);
+                }
+            }
+        };
+
+        // Initialize
+        initVideo();
+
+        // Click Handler
+        audioControl.addEventListener('click', () => {
+            if (heroVideo.muted) {
+                heroVideo.muted = false;
+            } else {
+                heroVideo.muted = true;
+            }
+            updateUIState();
+        });
+    }
+
 });

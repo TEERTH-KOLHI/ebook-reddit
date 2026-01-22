@@ -37,12 +37,15 @@
         <div class="container hero-grid">
 
             <!-- Left: Video Placeholder -->
-            <div class="hero-media">
-                <div class="video-placeholder">
-                    <div class="unmute-badge">Unmute</div>
-                    <div class="caption-overlay">
-                        <span class="caption-text">They <strong>worked hard</strong> to find tha</span>
-                        <div class="caption-sub-text">to find that strategy</div>
+            <div class="video-placeholder">
+                <video id="hero-video" class="hero-video" playsinline loop>
+                    <source src="assets/media/intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="audio-control" class="audio-control">
+                    <span id="audio-label">Unmute</span>
+                    <div class="toggle-track">
+                        <div class="toggle-knob"></div>
                     </div>
                 </div>
             </div>
